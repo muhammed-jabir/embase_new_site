@@ -1,0 +1,134 @@
+.connect{
+    width:100%;
+    padding:80px 100px;
+    background:
+        linear-gradient(180deg,#F8F8F8 0%,#FFFFFF 50%);
+    position: relative;
+    overflow: hidden;
+}
+
+
+.connect-container{
+    max-width:1335px;
+    margin:auto;
+
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    text-align:center;
+
+    gap:24px;
+
+    position:relative;
+}
+.connect .badge{
+
+    padding:6px 16px;
+
+    background:#EEF4FF;
+
+    border-radius:999px;
+    line-height: 100%;
+
+    font-size:16px;
+    font-weight:500;
+    align-items: center;
+    color: var(--color-Blue-Ribbon-600, rgba(21, 93, 252, 1));
+
+}
+.connect h2{
+
+    margin:0;
+
+    font-size:48px;
+    line-height:58px;
+    font-weight:600;
+    letter-spacing: 0%;
+    align-items: center;
+
+    color:rgba(34,34,34,1);
+
+    max-width:760px;
+}
+.connect p{
+
+    max-width:640px;
+
+    margin:0;
+    font-style: normal;
+
+    font-size:18px;
+    line-height:26px;
+    font-weight: 400;
+    letter-spacing: -3%;
+
+    color: var(--color-neutral-900, rgba(34, 34, 34, 1));
+
+}
+.connect-buttons{
+
+    display:flex;
+    gap:16px;
+
+    margin-top:12px;
+}
+.connect::before{
+
+    content:"";
+
+    position:absolute;
+    inset:0;
+
+    background-image:radial-gradient(#d9e6ff 1px, transparent 1px);
+    background-size:16px 16px;
+
+    opacity:.55;
+
+    pointer-events:none;
+}
+.btn-outline{
+
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+
+    padding:14px 28px;
+
+    border:1px solid #2F5CF0;
+    border-radius:999px;
+
+    color:#0c0c0c;
+
+    text-decoration:none;
+    font-weight:500;
+
+    transition:.3s;
+}
+
+.btn-outline:hover{
+
+    background:#EEF4FF;
+}
+.btn{
+
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+
+    padding:14px 28px;
+
+    border-radius:999px;
+
+    background:#2F5CF0;
+    color:#fff;
+
+    text-decoration:none;
+    font-weight:500;
+
+    transition:.3s;
+}
+
+.btn:hover{
+
+    background:#1745e0;
+}
