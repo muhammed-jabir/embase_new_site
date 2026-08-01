@@ -1,0 +1,56 @@
+
+.section-badge{
+
+    display:inline-flex;
+
+    padding:8px 18px;
+
+    border-radius:999px;
+
+    background:#EEF5FF;
+
+    color:#155DFC;
+
+    font-size:14px;
+
+    font-weight:600;
+
+}
+
+.btn{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    gap:8px;
+
+    padding:12px 24px;
+
+    border-radius:999px;
+
+    background:#155DFC;
+
+    color:#fff;
+
+}
+
+.card{
+
+    background:#fff;
+
+    border:1px solid #E5E7EB;
+
+    border-radius:16px;
+
+    padding:32px;
+
+}
+
+.container{
+
+    max-width:1335px;
+
+    margin:auto;
+
+}

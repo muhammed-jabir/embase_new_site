@@ -1,0 +1,61 @@
+:root {
+
+    /* Layout */
+    --container-width: 1335px;
+
+    /* Font */
+    --font-family-base: "Inter", sans-serif;
+    
+
+    /* Colors */
+    --color-primary: #155DFC;
+    --color-primary-light: #EEF5FF;
+
+    --color-heading: #111111;
+    --color-text: #0f0e0e;
+
+    --color-border: #E8E8E8;
+    --color-card-bg: #FFFFFF;
+
+    /* Radius */
+    --radius-card: 16px;
+    --radius-badge: 999px;
+}
+
+*{
+
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+
+}
+
+body{
+
+    font-family:var(--font-family-base);
+
+    color:var(--color-text);
+
+    background:#fff;
+
+}
+
+img{
+
+    display:block;
+
+    max-width:100%;
+
+}
+
+a{
+
+    text-decoration:none;
+
+}
+
+ul{
+
+    list-style:none;
+
+}
