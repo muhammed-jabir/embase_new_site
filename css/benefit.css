@@ -37,11 +37,12 @@
 
 .benefits__title{
 
+    margin:0;
     font-size:48px;
     font-weight:600;
     line-height:58px;
     color:#111;
-    align-items: center;
+  
 
 
 }
@@ -51,8 +52,7 @@
     max-width:716px;
     font-size:18px;
     line-height:26px;
-    color: var(--color-neutral-900, rgba(34, 34, 34, 1));
-    align-items: center;
+    color: #222;
     font-weight: 400;
     font-style: normal;
 
@@ -102,9 +102,11 @@
 
 .benefit-card__icon{
 
-    width:48px;
+    width:52px;
+    top: 14px;
+    left: 14px;
 
-    height:48px;
+    height:53px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -176,7 +178,7 @@
 
     margin-bottom:16px;
 
-    color:#111;
+    color:#000;
     letter-spacing: -4%;
 
 }
@@ -184,11 +186,326 @@
 .benefit-card__desc{
 
     font-size:18px;
+    font-family:'secondary',sans-serif;
 
     line-height:28px;
 
-    color: var(--color-neutral-900, rgba(34, 34, 34, 1));
+
+    color: #222;
+    letter-spacing: -4%;
 
     font-weight: 400;
+
+}
+
+/* ===========================================
+   BENEFITS RESPONSIVE
+=========================================== */
+
+
+/* Large Laptop */
+@media (max-width:1400px){
+
+    .benefits{
+
+        padding:80px 60px;
+
+    }
+
+
+    .benefits__title{
+
+        font-size:44px;
+
+        line-height:54px;
+
+    }
+
+
+    .benefits__grid{
+
+        gap:22px;
+
+    }
+
+
+    .benefit-card{
+
+        padding:28px;
+
+    }
+
+}
+
+
+
+/* Laptop / Tablet Landscape */
+@media (max-width:1024px){
+
+
+    .benefits{
+
+        padding: 20px;;
+
+    }
+
+
+    .benefits__intro{
+
+        max-width:650px;
+
+        margin-bottom:40px;
+
+    }
+
+
+    .benefits__title{
+
+        font-size:40px;
+
+        line-height:50px;
+
+    }
+
+
+    .benefits__subtitle{
+
+        font-size:17px;
+
+        line-height:26px;
+
+    }
+
+
+    .benefits__grid{
+
+        grid-template-columns:repeat(2,1fr);
+
+        gap:20px;
+
+    }
+
+
+    .benefit-card{
+
+        min-height:220px;
+
+    }
+
+
+}
+
+
+
+/* Tablet */
+@media (max-width:768px){
+
+
+    .benefits{
+
+        padding: 20px;;
+
+    }
+
+
+    .benefits__intro{
+
+        gap:14px;
+
+        margin-bottom:35px;
+
+    }
+
+
+    .benefits__badge{
+
+        font-size:14px;
+
+        padding:7px 16px;
+
+    }
+
+
+    .benefits__title{
+
+        font-size:34px;
+
+        line-height:44px;
+
+    }
+
+
+    .benefits__subtitle{
+
+        font-size:16px;
+
+        line-height:25px;
+
+    }
+
+
+    .benefits__grid{
+
+        grid-template-columns:1fr;
+
+        gap:18px;
+
+    }
+
+
+    .benefit-card{
+
+        padding:26px;
+
+        min-height:auto;
+
+    }
+
+
+    .benefit-card__icon{
+
+        width:44px;
+
+        height:44px;
+
+        margin-bottom:24px;
+
+    }
+
+
+    .benefit-card__icon img{
+
+        width:44px;
+
+        height:44px;
+
+    }
+
+
+    .benefit-card__title{
+
+        font-size:22px;
+
+        line-height:32px;
+
+    }
+
+
+    .benefit-card__desc{
+
+        font-size:16px;
+
+        line-height:26px;
+
+    }
+
+
+}
+
+
+
+/* Mobile */
+@media (max-width:480px){
+
+
+    .benefits{
+
+        padding: 16px;
+
+    }
+
+
+    .benefits__title{
+
+        font-size:28px;
+
+        line-height:38px;
+
+    }
+
+
+    .benefits__subtitle{
+
+        font-size:15px;
+
+        line-height:24px;
+
+    }
+
+
+    .benefit-card{
+
+        padding:22px;
+
+        border-radius:14px;
+
+    }
+
+
+    .benefit-card__icon{
+
+        margin-bottom:20px;
+
+    }
+
+
+    .benefit-card__title{
+
+        font-size:20px;
+
+        line-height:29px;
+
+        margin-bottom:12px;
+
+    }
+
+
+    .benefit-card__desc{
+
+        font-size:15px;
+
+        line-height:24px;
+
+    }
+
+}
+
+
+
+/* Small Phones */
+@media (max-width:360px){
+
+
+    .benefits{
+
+        padding:40px 16px;
+
+    }
+
+
+    .benefits__title{
+
+        font-size:25px;
+
+        line-height:34px;
+
+    }
+
+
+    .benefit-card{
+
+        padding:20px;
+
+    }
+
+
+    .benefit-card__icon img{
+
+        width:40px;
+
+        height:40px;
+
+    }
+
 
 }
