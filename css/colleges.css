@@ -67,8 +67,9 @@
     line-height:26px;
     font-weight: 400;
     font-style: normal;
+    letter-spacing: -4%;
 
-    color:rgba(34,34,34,1);
+    color:#222;
 }
 
 .trusted-btn{
@@ -93,7 +94,7 @@
 
     font-size:16px;
 
-    font-weight:600;
+    font-weight:400;
 
     white-space:nowrap;
 
@@ -107,8 +108,8 @@
 }
 
 .trusted-btn img{
-    width:16px;
-    height:16px;
+    width:10px;
+    height:10px;
 }
 
 /* RIGHT */
@@ -273,33 +274,325 @@
 
 }
 
+
+
+/* ==========================================
+   TRUSTED SECTION RESPONSIVE
+========================================== */
+
+
+/* Large Laptop */
+@media (max-width:1400px){
+
+    .trusted-section{
+        padding:80px 60px;
+    }
+
+
+    .trusted-container{
+
+        gap:50px;
+
+    }
+
+
+    .trusted-title{
+
+        font-size:44px;
+        line-height:54px;
+
+    }
+
+
+    .trusted-logos{
+
+        width:380px;
+        height:380px;
+
+    }
+
+}
+
+
+
+/* Laptop / Tablet Landscape */
+@media (max-width:1024px){
+
+
+    .trusted-section{
+
+        padding:70px 40px;
+
+    }
+
+
+    .trusted-container{
+
+        flex-direction:column;
+
+        text-align:center;
+
+        gap:50px;
+
+    }
+
+
+    .trusted-content{
+
+        width:100%;
+
+    }
+
+
+    .trusted-title{
+
+        max-width:700px;
+
+        margin-left:auto;
+        margin-right:auto;
+
+        font-size:42px;
+
+        line-height:52px;
+
+    }
+
+
+    .trusted-description{
+
+        margin-left:auto;
+        margin-right:auto;
+
+        max-width:650px;
+
+    }
+
+
+    .trusted-logos{
+
+        width:360px;
+
+        height:360px;
+
+    }
+
+}
+
+
+
+/* Tablet */
 @media (max-width:768px){
 
-.trusted-section{
-    padding:70px 20px;
+
+    .trusted-section{
+
+        padding: 20px;
+
+    }
+
+
+    .trusted-badge{
+
+        font-size:14px;
+
+        padding:7px 14px;
+
+    }
+
+
+    .trusted-title{
+
+        font-size:34px;
+
+        line-height:44px;
+
+    }
+
+
+    .trusted-description{
+
+        font-size:16px;
+
+        line-height:25px;
+
+    }
+
+
+    .trusted-btn{
+
+        padding:13px 24px;
+
+        font-size:15px;
+
+    }
+
+
+    .trusted-logos{
+
+        width:300px;
+
+        height:300px;
+
+        gap:12px;
+
+    }
+
+
+    .logo-column{
+
+        gap:12px;
+
+    }
+
+
+    .logo-box{
+
+        width:65px;
+
+        height:65px;
+
+        border-radius:14px;
+
+    }
+
+
+    .logo-box img{
+
+        max-width:45px;
+
+        max-height:45px;
+
+    }
+
 }
 
-.trusted-title{
 
-    font-size:36px;
-    line-height:46px;
+
+/* Mobile */
+@media (max-width:480px){
+
+
+
+
+    .trusted-section{
+
+        padding: 16px;
+        background: var(--color-neutral-200, #F8F8F8);
+
+
+    }
+
+    .trusted-badge{  
+
+  border: 1px solid var(--color-Blue-Ribbon-100, #D8E9FF);
+background: var(--color-Blue-Ribbon-50, #EEF5FF);
+    }
+
+
+    .trusted-title{
+
+        max-width:380px;
+        font-size:28px;
+
+        line-height:37px;
+
+    }
+
+
+    .trusted-description{
+
+        font-size:16px;
+
+        line-height:24px;
+
+    }
+
+
+    .trusted-logos{
+
+        width:260px;
+
+        height:260px;
+
+        gap:10px;
+
+    }
+
+
+    .logo-column{
+
+        gap:10px;
+
+    }
+
+
+    .logo-box{
+
+        width:55px;
+
+        height:55px;
+
+        border-radius:12px;
+
+    }
+
+
+    .logo-box img{
+
+        max-width:38px;
+
+        max-height:38px;
+
+    }
+
+
+    .trusted-btn{
+
+        width:fit-content;
+
+    }
+
 }
 
-.trusted-description{
 
-    font-size:16px;
-    line-height:28px;
-}
 
-.trusted-logos{
+/* Small Phones */
+@media (max-width:360px){
 
-    grid-template-columns:repeat(3,1fr);
-}
 
-.logo-box{
+    .trusted-title{
 
-    width:74px;
-    height:74px;
-}
+        font-size:25px;
+
+        line-height:34px;
+
+    }
+
+
+    .trusted-logos{
+
+        width:230px;
+
+        height:230px;
+
+    }
+
+
+    .logo-box{
+
+        width:48px;
+
+        height:48px;
+
+    }
+
+
+    .logo-box img{
+
+        max-width:32px;
+
+        max-height:32px;
+
+    }
 
 }
