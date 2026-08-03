@@ -1,8 +1,7 @@
 .connect{
     width:100%;
     padding:80px 100px;
-    background:
-        linear-gradient(180deg,#F8F8F8 0%,#FFFFFF 50%);
+    background:linear-gradient(180deg,#F8F8F8 0%,#FFFFFF 50%);
     position: relative;
     overflow: hidden;
 }
@@ -32,7 +31,6 @@
 
     font-size:16px;
     font-weight:500;
-    align-items: center;
     color: var(--color-Blue-Ribbon-600, rgba(21, 93, 252, 1));
 
 }
@@ -44,7 +42,6 @@
     line-height:58px;
     font-weight:600;
     letter-spacing: 0%;
-    align-items: center;
 
     color:rgba(34,34,34,1);
 
@@ -123,7 +120,7 @@
     color:#fff;
 
     text-decoration:none;
-    font-weight:500;
+    font-weight:400;
 
     transition:.3s;
 }
@@ -131,4 +128,215 @@
 .btn:hover{
 
     background:#1745e0;
+}
+
+/*==================================
+CONNECT SECTION RESPONSIVE
+===================================*/
+
+/* Large Laptop */
+@media (max-width:1400px){
+
+    .connect{
+
+        padding:70px 60px;
+
+    }
+
+    .connect h2{
+
+        font-size:44px;
+
+        line-height:54px;
+
+    }
+
+}
+
+
+/* Laptop / Tablet Landscape */
+@media (max-width:1024px){
+
+    .connect{
+
+        padding:70px 40px;
+
+    }
+
+    .connect-container{
+
+        gap:20px;
+
+    }
+
+    .connect h2{
+
+        font-size:40px;
+
+        line-height:50px;
+
+        max-width:680px;
+
+    }
+
+    .connect p{
+
+        font-size:17px;
+
+        line-height:26px;
+
+    }
+
+}
+
+
+/* Tablet */
+@media (max-width:768px){
+
+    .connect{
+
+        padding:60px 25px;
+
+    }
+
+    .connect .badge{
+
+        font-size:14px;
+
+        padding:6px 14px;
+
+    }
+
+    .connect h2{
+
+        font-size:34px;
+
+        line-height:44px;
+
+    }
+
+    .connect p{
+
+        font-size:16px;
+
+        line-height:25px;
+
+    }
+
+    .connect-buttons{
+
+        gap:14px;
+
+        flex-wrap:wrap;
+
+        justify-content:center;
+
+    }
+
+    .btn,
+    .btn-outline{
+
+        padding:13px 24px;
+
+        font-size:15px;
+
+    }
+
+}
+
+
+/* Mobile */
+@media (max-width:480px){
+
+    .connect{
+
+        padding:50px 20px;
+
+    }
+
+    .connect-container{
+
+        gap:18px;
+
+    }
+    
+
+    .connect h2{
+
+        font-size:32px;
+        font-weight:600;
+        letter-spacing:-4%;
+
+        line-height:40px;
+
+    }
+
+    .connect p{
+
+        font-size:16px;
+
+        line-height:24px;
+        letter-spacing:-4%;
+        font-weight:400;
+        font-style:normal;
+        font-family:'regular', sans-serif;
+
+    }
+
+    .connect-buttons{
+
+        display:flex;
+
+        justify-content:center;
+
+        align-items:center;
+
+        gap:12px;
+
+        flex-wrap:nowrap;
+
+        width:auto;
+
+    }
+    .btn,
+    .btn-outline{
+
+        width:auto;
+
+        min-width:140px;
+
+        padding:12px 20px;
+
+        font-size:15px;
+
+    }
+
+}
+
+
+/* Small Phones */
+@media (max-width:360px){
+
+    .connect{
+
+        padding:40px 16px;
+
+    }
+
+    .connect h2{
+
+        font-size:25px;
+
+        line-height:34px;
+
+    }
+
+    .connect p{
+
+        font-size:14px;
+
+        line-height:22px;
+
+    }
+
 }
