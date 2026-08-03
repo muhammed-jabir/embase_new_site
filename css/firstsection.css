@@ -38,6 +38,8 @@
 
     flex:0 0 48%;
 
+    max-width: 650px;
+
     display:flex;
 
     flex-direction:column;
@@ -52,11 +54,14 @@
 
     font-size:48px;
 
+    font-family:'semibold',sans-serif;
+
     font-weight:600;
 
     line-height:58px;
 
     letter-spacing:0%;
+    font-style:normal;
 
    color: rgba(0,0,0,1);
 
@@ -68,8 +73,9 @@
 
     margin:0;
     font-style: normal;
+    font-family:'Inter',sans-serif;
 
-    max-width:560px;
+    max-width:650px;
 
     font-size:18px;
 
@@ -89,19 +95,21 @@
 
     justify-content:center;
 
-    gap:10px;
+    gap:7px;
 
     padding:14px 28px;
 
-    border-radius:999px;
+    border-radius:42px;
 
     background:#155DFC;
 
     color:#fff;
+    font-family:'lato',sans-serif;
 
     font-size:16px;
 
-    font-weight:600;
+    font-weight:400;
+    font-family:'lato',sans-serif;
 
     white-space:nowrap;
 
@@ -122,5 +130,251 @@
 .demo-btn:hover{
 
     background:#0e4cd8;
+
+}
+
+/* ===========================
+   Large Laptop Screens
+=========================== */
+
+@media (max-width: 1400px){
+
+    .hero{
+        padding:70px 60px;
+    }
+
+    .hero-container{
+        gap:50px;
+    }
+
+    .hero-left h1{
+        font-size:44px;
+        line-height:54px;
+    }
+
+    .hero-right p{
+        font-size:17px;
+    }
+
+}
+
+
+/* ===========================
+   Tablets Landscape
+=========================== */
+
+@media (max-width: 1024px){
+
+    .hero{
+        padding:60px 40px;
+    }
+
+
+    .hero-container{
+
+        flex-direction:column;
+
+        align-items:flex-start;
+
+        gap:40px;
+
+    }
+
+
+    .hero-left,
+    .hero-right{
+
+        flex:0 0 100%;
+
+        width:100%;
+
+    }
+
+
+    .hero-left h1{
+
+        font-size:42px;
+
+        line-height:52px;
+
+        max-width:700px;
+
+    }
+
+
+    .hero-right{
+
+        gap:25px;
+
+    }
+
+
+    .hero-right p{
+
+        max-width:650px;
+
+        font-size:17px;
+
+        line-height:25px;
+
+    }
+
+
+}
+
+
+/* ===========================
+   Tablets Portrait
+=========================== */
+
+@media (max-width:768px){
+
+
+    .hero{
+
+        padding: 20px;
+
+    }
+
+
+    .hero-container{
+
+        gap:35px;
+
+    }
+
+
+    .hero-left h1{
+
+        font-size:36px;
+
+        line-height:45px;
+
+        max-width:100%;
+
+    }
+
+
+    .hero-right p{
+
+        font-size:16px;
+
+        line-height:24px;
+
+    }
+
+
+    .demo-btn{
+
+        padding:13px 24px;
+
+        font-size:15px;
+
+    }
+
+}
+
+
+/* ===========================
+   Mobile Devices
+=========================== */
+
+@media (max-width:480px){
+
+
+    .hero{
+
+        padding: 16px;;
+
+    }
+
+
+    .hero-container{
+
+        gap:30px;
+
+    }
+
+
+    .hero-left h1{
+
+        font-size:32px;
+
+        line-height:40px;
+
+        letter-spacing:-4%;
+        font-weight:600;
+
+    }
+
+
+    .hero-right{
+
+        gap:20px;
+
+    }
+
+
+    .hero-right p{
+
+        font-size:16px;
+
+        line-height:24px;
+        font-weight:400;
+        letter-spacing:-4%;
+        font-style:normal;
+
+    }
+
+
+    .demo-btn{
+
+        width:fit-content;
+
+        padding:14px 20px;
+
+    }
+
+
+    .demo-btn img{
+
+        width:9px;
+
+        height:9px;
+
+    }
+
+}
+
+
+/* ===========================
+   Small Mobile
+=========================== */
+
+@media (max-width:360px){
+
+
+    .hero{
+
+        padding:35px 16px;
+
+    }
+
+
+    .hero-left h1{
+
+        font-size:27px;
+
+        line-height:35px;
+
+    }
+
+
+    .hero-right p{
+
+        font-size:14px;
+
+    }
+
 
 }
