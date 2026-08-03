@@ -74,14 +74,15 @@
     content:"";
 
     position:absolute;
+
     inset:0;
 
-    background-image:radial-gradient(#d9e6ff 1px, transparent 1px);
-    background-size:16px 16px;
+    background:url("../assets/images/dot_bg.png") center center;
 
-    opacity:.55;
+    background-size:cover;
 
-    pointer-events:none;
+    background-repeat:no-repeat;
+
 }
 .btn-outline{
 
