@@ -1,20 +1,35 @@
-const caseSlides = [...document.querySelectorAll(".case-slide")];
+// ==========================================
+// CASE STUDY SLIDER
+// MANUAL ARROW CONTROL ONLY
+// ==========================================
+
+const caseSlides = Array.from(
+    document.querySelectorAll(".case-slide")
+);
+
 const casePrevButton = document.querySelector(".case-prev");
 const caseNextButton = document.querySelector(".case-next");
-const caseSlider = document.querySelector(".case-slider");
+
 
 if (
-    caseSlides.length &&
+    caseSlides.length > 0 &&
     casePrevButton &&
     caseNextButton
 ) {
 
     let currentSlide = 0;
 
-    function showCaseSlide(index, direction = "next") {
+
+    // ==========================================
+    // SHOW SLIDE
+    // ==========================================
+
+    function showCaseSlide(index, direction) {
 
         currentSlide =
-            (index + caseSlides.length) % caseSlides.length;
+            (index + caseSlides.length) %
+            caseSlides.length;
+
 
         caseSlides.forEach((slide, slideIndex) => {
 
@@ -24,18 +39,26 @@ if (
                 "slide-prev"
             );
 
+
             if (slideIndex === currentSlide) {
+
+                slide.classList.add("active");
 
                 // Restart animation
                 void slide.offsetWidth;
 
-                slide.classList.add("active");
 
-                slide.classList.add(
-                    direction === "next"
-                        ? "slide-next"
-                        : "slide-prev"
-                );
+                if (direction === "next") {
+
+                    slide.classList.add("slide-next");
+
+                }
+
+                if (direction === "prev") {
+
+                    slide.classList.add("slide-prev");
+
+                }
 
             }
 
@@ -43,46 +66,39 @@ if (
 
     }
 
+
+    // ==========================================
+    // DOWN ARROW → NEXT
+    // ==========================================
+
     caseNextButton.addEventListener("click", () => {
 
-        showCaseSlide(currentSlide + 1, "next");
+        showCaseSlide(
+            currentSlide + 1,
+            "next"
+        );
 
     });
+
+
+    // ==========================================
+    // UP ARROW → PREVIOUS
+    // ==========================================
 
     casePrevButton.addEventListener("click", () => {
 
-        showCaseSlide(currentSlide - 1, "prev");
+        showCaseSlide(
+            currentSlide - 1,
+            "prev"
+        );
 
     });
 
-    showCaseSlide(0, "next");
 
-    let autoRotate = setInterval(() => {
+    // ==========================================
+    // INITIAL SLIDE
+    // ==========================================
 
-        showCaseSlide(currentSlide + 1, "next");
-
-    }, 5000);
-
-    if (caseSlider) {
-
-        caseSlider.addEventListener("mouseenter", () => {
-
-            clearInterval(autoRotate);
-
-        });
-
-        caseSlider.addEventListener("mouseleave", () => {
-
-            clearInterval(autoRotate);
-
-            autoRotate = setInterval(() => {
-
-                showCaseSlide(currentSlide + 1, "next");
-
-            }, 5000);
-
-        });
-
-    }
+    showCaseSlide(0);
 
 }

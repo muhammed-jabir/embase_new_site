@@ -41,32 +41,20 @@ HEADER
 
 }
 
-.section-badge{
-    max-width: 232px;
-
-    display:inline-flex;
-
+.testimonal-badge{
+    
     padding:8px 16px;
-    gap:8px;
+
+    background: var(--color-Blue-Ribbon-50, #EEF5FF);
+    border: 1px solid var(--color-Blue-Ribbon-100, #D8E9FF);
+
 
     border-radius:50px;
-
-    background: var(--color-Blue-Ribbon-50, rgba(238, 245, 255, 1));
-
-    border: 1px solid var(--color-Blue-Ribbon-400, rgba(83, 160, 255, 1));
-
-    color:black;
-
-    font-size:16px;
-
     line-height: 100%;
-    letter-spacing: -4%;
-    align-items: center;
 
+    font-size:14px;
     font-weight:500;
-
-    margin-bottom:22px;
-
+    color: var(--color-Blue-Ribbon-600, #155DFC);
 }
 
 .section-title{
@@ -125,7 +113,7 @@ HEADER
 
     font-size:16px;
 
-    font-weight:600;
+    font-weight:400;
 
     white-space:nowrap;
 
