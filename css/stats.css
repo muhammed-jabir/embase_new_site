@@ -4,7 +4,7 @@
 
 .stats{
     width:100%;
-    padding:180px 100px;
+    padding:150px 100px 230px;
     overflow: hidden;
     background:#fff;
 }
@@ -14,6 +14,7 @@
     margin:0 auto;
     position:relative;
     overflow: visible;
+    min-height:620px;
 }
 .stats__intro{
     display:flex;
@@ -21,7 +22,7 @@
     align-items:center;
     text-align:center;
     gap:16px;
-    margin-bottom:150px;
+    margin-bottom:160px;
 }
 .stats__badge{
     display:inline-block;
@@ -68,20 +69,21 @@
 }
 .stats__watermark{
     position:absolute;
-    color:#E5CFFF;
     left:50%;
     top:50%;
-    width:900px;
-    max-width:80%;
-    opacity:2;
+    width:min(1140px, 92vw);
+    max-width:96%;
+    opacity: 0.78;
     user-select:none;
     pointer-events:none;
     z-index:0;
-  
+    transition: transform 0.14s ease-out;
+    filter: contrast(1.2) saturate(0.9);
+    mix-blend-mode: multiply;
 
     transform:
         translate(-50%, -50%)
-        translateY(calc(var(--py,0) * 1px));
+        translateY(var(--wmY, 0));
     will-change: transform;
 }
 .stats__grid{
@@ -103,23 +105,26 @@
 }   
 .stats__grid-wrap{
     position:relative;
-    overflow:hidden;
+    overflow:visible;
+    margin-top:0;
+    z-index:2;
 }
 .stat-card{
 
     width:320px;
-    height:200px;
+    height:240px;
 
     border-radius:16px;
 
     padding:24px;
-    
 
     display:flex;
     flex-direction:column;
     justify-content:center;
-  transform:
-        translateY(calc(var(--py,0) * 1px));
+    transition: transform 0.14s ease-out;
+
+    transform:
+        translateY(var(--py, 0));
 
     will-change:transform;
 

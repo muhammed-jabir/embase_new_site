@@ -1,36 +1,60 @@
-const parallaxSection = document.querySelector(".stats");
-const parallaxEls = document.querySelectorAll(".stats [data-speed]");
+﻿const parallaxSection = document.querySelector('.stats');
+const cards = document.querySelectorAll('.stat-card');
+const watermark = document.querySelector('.stats__watermark');
 
-function updateParallax() {
-
-    const rect = parallaxSection.getBoundingClientRect();
-
-    const viewportCenter = window.innerHeight / 2;
-
-    const sectionCenter = rect.top + rect.height / 2;
-
-    const distance = viewportCenter - sectionCenter;
-
-    // normalize across full entry-to-exit travel so it crosses 0 evenly
-    const totalTravel = (rect.height / 2) + viewportCenter;
-
-    const progress = Math.max(-1, Math.min(1, distance / totalTravel));
-
-    parallaxEls.forEach(el => {
-
-        const speed = Number(el.dataset.speed);
-
-        let offset = progress * speed;
-        offset = Math.max(-100, Math.min(100, offset)); // keep motion sane both ways
-
-        el.style.setProperty("--py", offset);
-
-    });
-
+function clamp(value, min, max) {
+    return Math.min(max, Math.max(min, value));
 }
 
-window.addEventListener("scroll", updateParallax);
+function resetParallax() {
+    cards.forEach((card) => {
+        card.style.transform = 'translateY(0px)';
+    });
 
-window.addEventListener("resize", updateParallax);
+    watermark.style.transform = 'translate(-50%, -50%) translateY(0px)';
+}
 
-updateParallax();
+function updateParallax() {
+    if (!parallaxSection || !watermark || cards.length === 0) {
+        return;
+    }
+
+    const rect = parallaxSection.getBoundingClientRect();
+    const viewportCenter = window.innerHeight / 2;
+    const sectionCenter = rect.top + rect.height / 2;
+    const distance = viewportCenter - sectionCenter;
+    const totalTravel = Math.max(rect.height * 0.72, 1);
+    const progress = clamp(distance / totalTravel, -1, 1);
+
+    if (rect.bottom < -120 || rect.top > window.innerHeight + 120) {
+        resetParallax();
+        return;
+    }
+
+    cards.forEach((card) => {
+        const speed = Number(card.dataset.speed) || 0;
+        const offset = -progress * speed * 0.55;
+        card.style.transform = `translateY(${offset}px)`;
+    });
+
+    watermark.style.transform = `translate(-50%, -50%) translateY(${-progress * 80}px)`;
+}
+
+let ticking = false;
+
+function requestParallaxUpdate() {
+    if (ticking) {
+        return;
+    }
+
+    ticking = true;
+    window.requestAnimationFrame(() => {
+        updateParallax();
+        ticking = false;
+    });
+}
+
+window.addEventListener('scroll', requestParallaxUpdate, { passive: true });
+window.addEventListener('resize', requestParallaxUpdate);
+
+requestParallaxUpdate();
