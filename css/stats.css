@@ -165,38 +165,426 @@
 
     color:var(--color-text-dark);
 }
-@media(max-width:992px){
+/* ==========================================
+   STATS RESPONSIVE
+========================================== */
 
-.stats{
 
-padding:60px 24px;
+/* ==========================================
+   TABLET
+========================================== */
 
+@media (max-width: 992px) {
+
+    .stats {
+        width: 100%;
+        padding: 80px 30px;
+        overflow: hidden;
+    }
+
+    .stats-container {
+        width: 100%;
+        max-width: 1335px;
+        min-height: auto;
+        margin: 0 auto;
+    }
+
+    .stats__intro {
+        gap: 14px;
+        margin-bottom: 50px;
+    }
+
+    .stats__badge {
+        padding: 7px 14px;
+        font-size: 14px;
+    }
+
+    .stats__title {
+        font-size: 38px;
+        line-height: 46px;
+    }
+
+    .stats__subtitle {
+        max-width: 650px;
+        font-size: 16px;
+        line-height: 24px;
+    }
+
+    .stats__watermark {
+        display: none;
+    }
+
+    .stats__grid {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: stretch;
+        gap: 24px;
+    }
+
+    .stat-card {
+        width: 320px;
+        height: 180px;
+        padding: 24px;
+        border-radius: 16px;
+    }
+
+    .stat-card__value {
+        font-size: 32px;
+        margin-bottom: 8px;
+    }
+
+    .stat-card__label {
+        font-size: 20px;
+        line-height: 28px;
+    }
+
+    .stat-card--offset {
+        margin-bottom: 0;
+    }
 }
 
-.stats__grid{
 
-flex-wrap:wrap;
-justify-content:center;
+/* ==========================================
+   MOBILE
+   Matches your reference image
+========================================== */
 
+@media (max-width: 768px) {
+
+    .stats {
+        width: 100%;
+        padding: 28px 10px 30px;
+        overflow: hidden;
+    }
+
+    .stats-container {
+        width: 100%;
+        min-height: auto;
+        margin: 0;
+    }
+
+
+    /* --------------------------------
+       INTRO
+    -------------------------------- */
+
+    .stats__intro {
+        width: 100%;
+        margin-bottom: 22px;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        gap: 12px;
+
+        text-align: center;
+    }
+
+
+    /* Badge */
+
+    .stats__badge {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+
+        padding: 5px 11px;
+
+        font-size: 11px;
+        line-height: 16px;
+
+        border-radius: 30px;
+    }
+
+
+    /* Title */
+
+    .stats__title {
+        width: 100%;
+        max-width: 280px;
+
+        margin: 0;
+
+        font-size: 23px;
+        line-height: 28px;
+
+        font-weight: 600;
+
+        text-align: center;
+    }
+
+
+    /* Description */
+
+    .stats__subtitle {
+        width: 100%;
+        max-width: 270px;
+
+        margin: 0;
+
+        font-size: 12px;
+        line-height: 17px;
+
+        text-align: center;
+    }
+
+
+    /* --------------------------------
+       REMOVE WATERMARK
+    -------------------------------- */
+
+    .stats__watermark {
+        display: none;
+    }
+
+
+    /* --------------------------------
+       CARDS
+    -------------------------------- */
+
+    .stats__grid-wrap {
+        width: 100%;
+        margin: 0;
+    }
+
+    .stats__grid {
+
+        width: 100%;
+
+        display: flex;
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: 11px;
+
+        margin: 0;
+        padding: 0;
+    }
+
+
+    /* --------------------------------
+       CARD
+    -------------------------------- */
+
+    .stat-card {
+
+        width: 80%;
+        height: 87px;
+
+        min-height: 87px;
+
+        padding: 15px 17px;
+
+        border-radius: 11px;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        transform: none;
+
+        margin: 0;
+    }
+
+
+    /* --------------------------------
+       ALTERNATE CARD
+       RIGHT SIDE
+    -------------------------------- */
+
+    .stat-card:nth-child(even) {
+        align-self: flex-end;
+    }
+
+
+    /* --------------------------------
+       BLUE CARDS
+    -------------------------------- */
+
+    .stat-card--blue {
+        background: rgba(237, 242, 255, 1);
+    }
+
+
+    /* --------------------------------
+       PEACH CARDS
+    -------------------------------- */
+
+    .stat-card--peach {
+        background: #FFF4E8;
+    }
+
+
+    /* --------------------------------
+       REMOVE DESKTOP OFFSET
+    -------------------------------- */
+
+    .stat-card--offset {
+        margin-bottom: 0;
+    }
+
+
+    /* --------------------------------
+       VALUE
+    -------------------------------- */
+
+    .stat-card__value {
+
+        margin: 0 0 7px;
+
+        font-size: 18px;
+        line-height: 20px;
+
+        font-weight: 600;
+    }
+
+
+    /* --------------------------------
+       LABEL
+    -------------------------------- */
+
+    .stat-card__label {
+
+        margin: 0;
+
+        font-size: 16px;
+        line-height: 21px;
+
+        font-weight: 400;
+    }
 }
 
-.stat-card{
 
-width:320px;
+/* ==========================================
+   SMALL MOBILE
+========================================== */
 
+@media (max-width: 480px) {
+
+    .stats {
+        padding: 40px 16px 40px 16px;
+    }
+
+
+    /* Intro */
+
+    .stats__intro {
+        margin-bottom: 20px;
+        gap: 10px;
+    }
+
+
+    .stats__badge {
+        padding: 8px 16px;
+
+        font-size: 14px;
+        line-height: 100%;
+        font-weight: 500;
+    }
+
+
+    .stats__title {
+        max-width: 380px;
+        max-height: 80px;
+
+        font-size: 32px;
+        line-height: 40px;
+        font-weight: 600;
+        letter-spacing: -4%;
+    }
+
+
+    .stats__subtitle {
+        max-width: 380px;
+
+        font-size: 16px;
+        line-height: 24px;
+        letter-spacing: -4%;
+    }
+
+
+    /* Cards */
+
+    .stats__grid {
+        gap: 16px;
+    }
+
+    .stat-card {
+
+        max-width: 320px;
+
+        height: 124px;
+        min-height: 87px;
+
+        padding: 16px;
+
+        border-radius: 16px;
+    }
+
+
+    .stat-card__value {
+        font-size: 24px;
+        line-height: 34px;
+
+        margin-bottom: 6px;
+    }
+
+
+    .stat-card__label {
+        font-size: 24px;
+        line-height: 34px;
+    }
 }
 
-.stats__watermark{
 
-display:none;
+/* ==========================================
+   VERY SMALL PHONES
+========================================== */
 
-}
+@media (max-width: 360px) {
 
-.stats__title{
+    .stats {
+        padding: 24px 9px 25px;
+    }
 
-font-size:38px;
-line-height:46px;
+    .stats__intro {
+        margin-bottom: 19px;
+    }
 
-}
+    .stats__title {
+        max-width: 260px;
 
+        font-size: 22px;
+        line-height: 27px;
+    }
+
+    .stats__subtitle {
+        max-width: 260px;
+
+        font-size: 11px;
+        line-height: 16px;
+    }
+
+    .stat-card {
+
+        width: 79%;
+
+        height: 84px;
+        min-height: 84px;
+
+        padding: 13px 15px;
+    }
+
+    .stat-card__value {
+        font-size: 17px;
+        line-height: 19px;
+    }
+
+    .stat-card__label {
+        font-size: 15px;
+        line-height: 20px;
+    }
 }
