@@ -337,6 +337,7 @@
 
     .stats__watermark {
         display: none;
+        transform: none;
     }
 
 
@@ -371,12 +372,13 @@
 
     .stat-card {
 
-        width: 80%;
-        height: 87px;
+        width: 79%;
+        max-width: 320px;
+        height: 124px;
 
         min-height: 87px;
 
-        padding: 15px 17px;
+        padding: 20px;
 
         border-radius: 11px;
 
@@ -385,8 +387,11 @@
         justify-content: center;
 
         transform: none;
+        transition: none;
+        animation: none;
+        will-change: auto;
 
-        margin: 0;
+        
     }
 
 
@@ -435,8 +440,8 @@
 
         margin: 0 0 7px;
 
-        font-size: 18px;
-        line-height: 20px;
+        font-size: 24px;
+        line-height: 34px;
 
         font-weight: 600;
     }
@@ -450,8 +455,8 @@
 
         margin: 0;
 
-        font-size: 16px;
-        line-height: 21px;
+        font-size: 24px;
+        line-height: 34px;
 
         font-weight: 400;
     }
@@ -522,6 +527,10 @@
         padding: 16px;
 
         border-radius: 16px;
+        transform: none;
+        transition: none;
+        animation: none;
+        will-change: auto;
     }
 
 
