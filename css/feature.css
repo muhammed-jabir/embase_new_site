@@ -31,29 +31,33 @@ margin:auto;
 }
  
 .features__badge {
-    display: inline-block;
-  padding: 5px 16px;
-  font-size: 12.5px;
-  font-weight: 600;
-  color: var(--color-badge-text);
-  background: var(--color-badge-bg);
-  border-radius: var(--radius-badge);
+    padding:8px 18px;
+    background:#EEF5FF;
+    color:#155DFC;
+    border-radius:999px;
+    font-size:16px;
+    font-weight:500;
+    line-height: 100%;
 }
  
 .features__title {
   margin: 0;
-  max-width: 620px;
+  max-width: 835px;
   font-size: 48px;
-  font-weight: 700;
-  line-height: 1.25;
-  letter-spacing: -0.4px;
+  font-weight: 600;
+  line-height: 58px;
+  letter-spacing: 0%;
+  color:#222;
 }
  
 .features__subtitle {
-  max-width: 650px;
+  max-width: 716px;
   font-size: 18px;
-  line-height: 30px;
-  color: var(--color-text-body);
+  line-height: 26px;
+  font-weight: 400;
+  letter-spacing: -4%;
+  color: #222;
+  font-style: normal;
 }
  
 /* ==========================================================================
@@ -63,9 +67,10 @@ margin:auto;
    exactly the case CSS Grid exists for.
    ========================================================================== */
 .features__grid {
+  max-width: 1335px;
   display: grid;
   grid-template-columns: repeat(3, minmax(0,1fr));
-  gap: 20px;
+  gap: 24px;
 }
  
 /* ==========================================================================
@@ -83,6 +88,17 @@ margin:auto;
   border-radius: var(--radius-card);
   transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
 }
+
+.feature-card--wide {
+    grid-column: span 2;
+    flex-direction: row;
+    padding: 16px 18px;
+    border-radius: 16px;
+    height: 328px;
+    border: 1px solid var(--color-neutral-300, #E6E6E6);
+    box-sizing: border-box;
+    gap: 24px;
+}
  
 .feature-card:hover {
   border-color: var(--color-card-border-hover);
@@ -92,17 +108,23 @@ margin:auto;
  
 .feature-card__title {
   margin: 0 0 8px;
-  font-size: 17px;
-  font-weight: 700;
-  line-height: 1.35;
-  color: var(--color-text-heading);
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 34px;
+  letter-spacing: -4%;
+
+  color: #000;
 }
  
 .feature-card__desc {
   margin: 0 0 20px;
-  font-size: 14px;
-  line-height: 1.6;
-  color: var(--color-text-body);
+  font-size: 18px;
+  line-height: 26px;
+  font-weight: 400;
+  letter-spacing: -4%;
+  font-style: normal;
+  font-family:'semibold', sans-serif,Inter;
+  color: #222;
 }
  
 .feature-card__list {
@@ -130,32 +152,31 @@ margin:auto;
    stretches to match the height of its row (set by Grid) — no
    fixed height needed anywhere. */
 .feature-card__image {
-  flex: 1 1 auto;
-  width: 100%;
-  min-height: 160px;
-  max-height: 260px;
-  object-fit: cover;
+    flex: 1 1 auto;
+    width: 100%;
+    min-height: 160px;
+    max-height: 260px;
+    object-fit: contain;
+   background: #EBF1FE;
 
-  background: var(--color-image-bg);
-  color: transparent;
-  font-size: 0;
-  border-radius: var(--radius-image);
+    border-radius: 12px;
+
 }
  
 /* Call-to-action pill button */
 .feature-card__cta {
-  align-self: flex-start;
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  margin-top: auto;
-  padding: 11px 20px;
-  font-size: 14px;
-  font-weight: 600;
-  color: #ffffff;
-  background: var(--color-accent-blue);
-  border-radius: var(--radius-badge);
-  transition: background 0.2s ease;
+    align-self: flex-start;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: auto;
+    padding: 11px 20px;
+    font-size: 14px;
+    font-weight: 600;
+    color: #fff;
+    background: #155DFC;
+    border-radius: 999px;
+    text-decoration: none;
 }
  
 .feature-card__cta:hover {
@@ -168,14 +189,18 @@ margin:auto;
 flex:0 0 220px;
 }
 .feature-card--wide .feature-card__body {
-  flex: 0 0 220px;
+  flex: 0 0 300px;
   display: flex;
   flex-direction: column;
 }
- 
 .feature-card--wide .feature-card__image {
-  flex: 1 1 auto;
-  min-height: 0;
+    flex: 0 0 363px;
+    width: 363px;
+    height: 289px;
+    min-width: 0;
+    min-height: 0;
+    max-height: none;
+    object-fit: contain;
 }
 
 .card-common{
