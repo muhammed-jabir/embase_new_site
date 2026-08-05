@@ -4,7 +4,7 @@
 
 .stats{
     width:100%;
-    padding:150px 100px 230px;
+    padding:80px 100px;
     overflow: hidden;
     background:#fff;
 }
@@ -25,6 +25,7 @@
     margin-bottom:160px;
 }
 .stats__badge{
+
     display:inline-block;
     padding:8px 16px;
     gap: 8px;
@@ -73,7 +74,7 @@
     top:50%;
     width:min(1140px, 92vw);
     max-width:96%;
-    opacity: 0.78;
+    opacity: 0.25;
     user-select:none;
     pointer-events:none;
     z-index:0;

@@ -5,7 +5,7 @@ FAQ
 .faq{
 
     width:100%;
-    padding:100px 100px;
+    padding:80px 100px;
 
     background: linear-gradient(134.11deg, #FEEAF8 -3.16%, #EEF5FF 43.8%, #FFF5EB 63.8%, #EEF5FF 80.69%, #FEEAF8 104.66%);
 
@@ -437,7 +437,7 @@ FAQ RESPONSIVE
         font-weight:600;
         font-family:'semibold', sans-serif;
         color: #000;
-        
+
 
         line-height:40px;
         letter-spacing:-4%;

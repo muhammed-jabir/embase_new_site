@@ -49,9 +49,10 @@
     font-size: 18px;
     line-height: 26px;
     font-weight: 400;
-    letter-spacing: -0.04em;
+    letter-spacing: -4%;
     color: #222;
-    max-width: 900px;
+    max-width: 716px;
+    font-style: normal;
     margin: 0 auto;
 }
 
@@ -192,6 +193,39 @@
 
 }
 
+/* ==========================================
+   SLIDE DIRECTION ANIMATIONS
+========================================== */
+
+@keyframes caseSlideFromRight {
+
+    0% {
+        opacity: 0;
+        transform: translateX(60px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+
+}
+
+
+@keyframes caseSlideFromLeft {
+
+    0% {
+        opacity: 0;
+        transform: translateX(-60px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+
+}
+
 
 /* ==========================================
    NAVIGATION
@@ -256,39 +290,270 @@
    RESPONSIVE
 ========================================== */
 
-@media (max-width: 991px) {
+/* ==========================================
+   RESPONSIVE - MOBILE
+========================================== */
+
+@media (max-width: 768px) {
+
+    /* =========================
+       MAIN SECTION
+    ========================= */
 
     .case-study {
-        padding: 70px 20px;
+        padding: 16px;
     }
 
-    .case-slide {
-        flex-direction: column;
+
+    /* =========================
+       HEADER
+    ========================= */
+
+    .case-header {
+        max-width: 380px;
+        margin: 0 auto 32px;
+        text-align: center;
     }
+
+    .case-study .section-badge {
+        margin-bottom: 12px;
+    }
+
+    .case-header h2 {
+        font-size: 32px;
+        font-weight: 600;
+        line-height: 40px;
+
+        margin: 0 0 12px;
+
+        color: #000;
+    }
+
+    .case-header p {
+        font-size: 16px;
+        line-height: 24px;
+        font-weight: 400;
+
+        letter-spacing: -0.04em;
+
+        color: #222;
+
+        max-width: 364px;
+
+        margin: 0 auto;
+    }
+
+
+    /* =========================
+       BLUE SLIDER CONTAINER
+    ========================= */
+
+    .case-slider {
+        width: 100%;
+
+        padding: 16px;
+
+        border-radius: 16px;
+
+        overflow: hidden;
+
+        box-sizing: border-box;
+    }
+
+
+    /* =========================
+       SLIDE
+    ========================= */
+
+    .case-slide {
+        display: none;
+
+        flex-direction: column;
+
+        align-items: stretch;
+
+        width: 100%;
+
+        gap: 16px;
+
+        padding: 0;
+
+        border-radius: 16px;
+
+        box-sizing: border-box;
+    }
+
+    .case-slide.active {
+        display: flex;
+    }
+
+
+    /* =========================
+       IMAGE
+    ========================= */
 
     .case-image {
         width: 100%;
+
+        height: auto;
+
         flex: none;
+
+        order: 1;
+
+        box-sizing: border-box;
     }
 
     .case-image img {
-        height: 280px;
+        display: block;
+
+        width: 100%;
+
+        height: auto;
+
+        aspect-ratio: 1.46 / 1;
+
+        object-fit: cover;
+
+        border-radius: 16px;
     }
+
+
+    /* =========================
+       CONTENT
+    ========================= */
 
     .case-content {
         width: 100%;
+
+        height: auto;
+
+        flex: none;
+
+        order: 2;
+
+        padding: 0;
+
+        background: transparent;
+
+        box-sizing: border-box;
+
+        display: block;
     }
+
+    .case-content h3 {
+        font-size: 24px;
+
+        line-height: 32px;
+
+        margin: 0 0 12px;
+
+        color: #000;
+    }
+
+    .case-content p {
+        font-size: 16px;
+
+        line-height: 24px;
+
+        margin: 0 0 20px;
+
+        color: #222;
+    }
+
+    .case-content h4 {
+        font-size: 16px;
+
+        line-height: 24px;
+
+        margin: 0 0 20px;
+
+        color: #222;
+    }
+
+    .case-content a {
+        font-size: 16px;
+
+        color: var(--color-Blue-Ribbon-400, #53A0FF);
+    }
+
+    .case-content a span {
+        border-bottom-color: #53A0FF;
+    }
+
+    .case-content a img {
+        filter: none;
+    }
+
+    /* ==========================================
+   MOBILE SLIDE DIRECTION
+========================================== */
+
+.case-slide.active.slide-next {
+    animation: caseSlideFromRight
+        0.55s
+        cubic-bezier(0.22, 1, 0.36, 1)
+        both;
+}
+
+
+.case-slide.active.slide-prev {
+    animation: caseSlideFromLeft
+        0.55s
+        cubic-bezier(0.22, 1, 0.36, 1)
+        both;
+}
+
+
+    /* =========================
+       NAVIGATION
+    ========================= */
 
     .case-navigation {
         position: static;
         transform: none;
+
+        display: flex;
         flex-direction: row;
+
         justify-content: center;
-        margin-top: 20px;
+        align-items: center;
+
+        margin-top: 16px;
+        gap: 12px;
     }
 
-    .case-header h2 {
-        font-size: 38px;
-        line-height: 48px;
+    .case-navigation button {
+        width: 40px;
+        height: 40px;
+
+        padding: 0;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        border: 1px solid #53A0FF;
+        border-radius: 50%;
+
+        background: #fff;
+
+        cursor: pointer;
     }
+
+    .case-navigation button img {
+    width: 16px;
+    height: 16px;
+    display: block;
+}
+
+.case-navigation button:first-child img {
+    transform: rotate(-90deg);
+}
+
+.case-navigation button:last-child img {
+    transform: rotate(-90deg);
+}
+
+
 }
