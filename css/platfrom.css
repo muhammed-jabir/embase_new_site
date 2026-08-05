@@ -581,6 +581,39 @@
         transform 0.55s cubic-bezier(.22, 1, .36, 1);
 }
 
+
+.platform-content {
+    width: 100%;
+}
+
+.platform-item {
+    display: none;
+}
+
+.platform-item.active {
+    display: block;
+}
+
+
+.platform-item[data-theme="green"] .platform-card {
+ background: linear-gradient(270deg, #95EBAB 0%, #E8FBED 100%);
+
+}
+
+.platform-item[data-theme="green"] .platform-left {
+   background: linear-gradient(109.22deg, #B8F1C6 2.21%, #65E284 95.42%);
+
+}
+
+.platform-item[data-theme="green"] .dashboard-icon {
+    background: linear-gradient(
+        134.05deg,
+        #BDEFD2 -0.1%,
+        #43B979 113.05%
+    );
+}
+
+
 .platform-right.is-visible li:nth-child(1) {
     opacity: 1;
     transform: translateY(0);
