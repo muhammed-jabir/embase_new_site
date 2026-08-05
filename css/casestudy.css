@@ -1,6 +1,3 @@
-/* ==========================================
-   CASE STUDY
-========================================== */
 
 .case-study {
     width: 100%;
@@ -72,12 +69,6 @@
     width: 100%;
     border-radius: 16px;
 }
-
-
-/* ==========================================
-   IMAGE
-========================================== */
-
 .case-image {
     width: 320px;
     height: 332px;
@@ -91,11 +82,6 @@
     border-radius: 16px;
     display: block;
 }
-
-
-/* ==========================================
-   CONTENT
-========================================== */
 
 .case-content {
     flex: 1;
@@ -158,11 +144,6 @@
     width: 10px;
 }
 
-
-/* ==========================================
-   SLIDE VISIBILITY + ANIMATION
-========================================== */
-
 .case-slide {
     display: none;
 }
@@ -174,10 +155,6 @@
 }
 
 
-/*
-   New slide enters slightly from below
-   and becomes visible smoothly.
-*/
 
 @keyframes caseSlideIn {
 
@@ -192,11 +169,6 @@
     }
 
 }
-
-/* ==========================================
-   SLIDE DIRECTION ANIMATIONS
-========================================== */
-
 @keyframes caseSlideFromRight {
 
     0% {
@@ -225,11 +197,6 @@
     }
 
 }
-
-
-/* ==========================================
-   NAVIGATION
-========================================== */
 
 .case-navigation {
     position: absolute;
@@ -285,29 +252,10 @@
     width: 18px;
 }
 
-
-/* ==========================================
-   RESPONSIVE
-========================================== */
-
-/* ==========================================
-   RESPONSIVE - MOBILE
-========================================== */
-
 @media (max-width: 768px) {
-
-    /* =========================
-       MAIN SECTION
-    ========================= */
-
     .case-study {
         padding: 16px;
     }
-
-
-    /* =========================
-       HEADER
-    ========================= */
 
     .case-header {
         max-width: 380px;
@@ -343,11 +291,6 @@
         margin: 0 auto;
     }
 
-
-    /* =========================
-       BLUE SLIDER CONTAINER
-    ========================= */
-
     .case-slider {
         width: 100%;
 
@@ -359,11 +302,6 @@
 
         box-sizing: border-box;
     }
-
-
-    /* =========================
-       SLIDE
-    ========================= */
 
     .case-slide {
         display: none;
@@ -386,11 +324,6 @@
     .case-slide.active {
         display: flex;
     }
-
-
-    /* =========================
-       IMAGE
-    ========================= */
 
     .case-image {
         width: 100%;
@@ -417,11 +350,6 @@
 
         border-radius: 16px;
     }
-
-
-    /* =========================
-       CONTENT
-    ========================= */
 
     .case-content {
         width: 100%;
@@ -485,10 +413,6 @@
         filter: none;
     }
 
-    /* ==========================================
-   MOBILE SLIDE DIRECTION
-========================================== */
-
 .case-slide.active.slide-next {
     animation: caseSlideFromRight
         0.55s
@@ -503,11 +427,6 @@
         cubic-bezier(0.22, 1, 0.36, 1)
         both;
 }
-
-
-    /* =========================
-       NAVIGATION
-    ========================= */
 
     .case-navigation {
         position: static;
