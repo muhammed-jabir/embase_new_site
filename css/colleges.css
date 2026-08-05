@@ -495,9 +495,11 @@ background: var(--color-Blue-Ribbon-50, #EEF5FF);
 
         width:100%;
         max-width:380px;
-        font-size:28px;
+        font-size:32px;
+        font-weight: 600;
+        letter-spacing: -4%;
 
-        line-height:37px;
+        line-height:40px;
 
     }
 

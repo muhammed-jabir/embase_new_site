@@ -200,7 +200,7 @@
     }
 
     .stats__title {
-        font-size: 38px;
+        font-size: 32px;
         line-height: 46px;
     }
 
@@ -307,7 +307,7 @@
 
         margin: 0;
 
-        font-size: 23px;
+        font-size: 32px;
         line-height: 28px;
 
         font-weight: 600;
@@ -497,6 +497,7 @@
 
         font-size: 32px;
         line-height: 40px;
+        color: #000;
         font-weight: 600;
         letter-spacing: -4%;
     }
@@ -504,6 +505,7 @@
 
     .stats__subtitle {
         max-width: 380px;
+        font-weight: 400;
 
         font-size: 16px;
         line-height: 24px;

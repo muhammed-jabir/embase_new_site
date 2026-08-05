@@ -1123,41 +1123,647 @@
    RESPONSIVE
 =========================== */
 
-@media(max-width:992px){
+/* =========================================================
+   ADMISSION MANAGEMENT - MOBILE RESPONSIVE
+   Desktop CSS above remains unchanged
+========================================================= */
 
-.platform-overview{
+/* =========================================================
+   ADMISSION MANAGEMENT
+   MOBILE VIEW
+========================================================= */
 
-padding:60px 20px;
+@media (max-width: 992px) {
+
+    /* =========================
+       PLATFORM SECTION
+    ========================= */
+
+    .platform-overview {
+        width: 100%;
+        padding: 40px 16px;
+        box-sizing: border-box;
+        overflow: hidden;
+    }
+
+    .platform-overview .container {
+        width: 100%;
+        max-width: 100%;
+        margin: 0 auto;
+    }
+
+
+    /* =========================
+       HEADER
+    ========================= */
+
+    .section-header {
+        gap: 10px;
+        margin-bottom: 18px;
+    }
+
+    .section-badge {
+        padding: 5px 10px;
+        font-size: 10px;
+        line-height: 14px;
+    }
+
+    .section-title {
+        width: 100%;
+        max-width: 330px;
+        max-height: none;
+
+        margin: 0 auto;
+
+        font-size: 26px;
+        line-height: 31px;
+
+        text-align: center;
+    }
+
+
+    /* =========================
+       MOBILE TABS
+    ========================= */
+
+    .platform-tabs {
+        width: 100%;
+
+        display: flex;
+        justify-content: flex-start;
+
+        gap: 6px;
+
+        margin-bottom: 18px;
+
+        padding: 0;
+
+        border: none;
+
+        overflow-x: auto;
+        overflow-y: hidden;
+
+        scrollbar-width: none;
+    }
+
+    .platform-tabs::-webkit-scrollbar {
+        display: none;
+    }
+
+    .platform-tabs .tab {
+
+        flex: 0 0 auto;
+
+        padding: 5px 9px;
+
+        border: 1px solid #AFCBFF;
+
+        border-radius: 20px;
+
+        background: #fff;
+
+        font-size: 9px;
+
+        line-height: 14px;
+
+        white-space: nowrap;
+
+        color: #222;
+    }
+
+    .platform-tabs .tab.active {
+
+        background: var(--color-Blue-Ribbon-800, #1239BB);
+
+
+       border: 1px solid var(--color-Blue-Ribbon-400, #53A0FF);
+
+        color: #fff;
+
+        font-weight: 500;
+    }
+
+
+    /* =====================================================
+       MAIN ADMISSION CARD
+    ===================================================== */
+
+    .platform-card {
+
+        width: 100%;
+
+        display: flex;
+
+        flex-direction: column;
+
+        gap: 10px;
+
+        padding: 6px;
+
+        box-sizing: border-box;
+
+        border-radius: 12px;
+
+        background:
+            linear-gradient(
+                270deg,
+                #BAD9FF 0%,
+                #EEF5FF 100%
+            );
+    }
+
+
+    /* =====================================================
+       ADMISSION DASHBOARD
+    ===================================================== */
+
+    .platform-left {
+
+        width: 100%;
+
+        height: auto;
+
+        min-height: 300px;
+
+        padding: 8px;
+
+        box-sizing: border-box;
+
+        border-radius: 10px;
+
+        background:
+            linear-gradient(
+                109.22deg,
+                #D8E9FF 2.21%,
+                #8AC1FF 95.42%
+            );
+
+        overflow: visible;
+    }
+
+
+    .dashboard-panel {
+
+        width: 100%;
+
+        height: auto;
+
+        min-height: 280px;
+
+        max-width: none;
+
+        max-height: none;
+
+        padding: 12px;
+
+        box-sizing: border-box;
+
+        border-radius: 10px;
+
+        overflow: visible;
+    }
+
+
+    /* =====================================================
+       DASHBOARD HEADER
+    ===================================================== */
+
+    .dashboard-header {
+
+        gap: 8px;
+    }
+
+    .dashboard-icon {
+
+        width: 34px;
+        height: 34px;
+
+        flex: 0 0 34px;
+
+        border-radius: 8px;
+    }
+
+    .dashboard-icon img {
+
+        width: 28px;
+        height: 28px;
+    }
+
+    .dashboard-heading h4 {
+
+        margin: 0 0 2px;
+
+        font-size: 14px;
+
+        line-height: 18px;
+    }
+
+    .dashboard-heading p {
+
+        font-size: 10px;
+
+        line-height: 14px;
+
+        white-space: normal;
+    }
+
+
+    /* =====================================================
+       DIVIDER
+    ===================================================== */
+
+    .dashboard-divider {
+
+        margin-top: 10px;
+
+        margin-bottom: 10px;
+    }
+
+
+    /* =====================================================
+       ADMISSION CHART
+    ===================================================== */
+
+    .dashboard-chart {
+
+        width: 100%;
+
+        border-radius: 8px;
+
+        overflow: hidden;
+
+        background: #fff;
+    }
+
+    .dashboard-chart img {
+
+        width: 100%;
+
+        height: auto;
+
+        display: block;
+
+        object-fit: contain;
+    }
+
+
+    /* =====================================================
+       APPLIED / ADMITTED
+    ===================================================== */
+
+    .dashboard-stat {
+
+        width: 58%;
+
+        height: 38px;
+
+        padding: 7px 10px;
+
+        border-radius: 9px;
+
+        box-sizing: border-box;
+    }
+
+    .dashboard-stat span {
+
+        font-size: 11px;
+
+        line-height: 16px;
+    }
+
+    .dashboard-stat strong {
+
+        font-size: 12px;
+
+        line-height: 16px;
+    }
+
+
+    /* Applied */
+
+    .dashboard-stat.applied {
+
+        left: -3px;
+
+        bottom: 34px;
+    }
+
+
+    /* Admitted */
+
+    .dashboard-stat.admitted {
+
+        right: -3px;
+
+        bottom: 3px;
+    }
+
+
+    /* =====================================================
+       RIGHT ADMISSION CONTENT
+    ===================================================== */
+
+    .platform-right {
+
+        width: 100%;
+
+        max-width: none;
+
+        max-height: none;
+
+        padding: 16px;
+
+        box-sizing: border-box;
+
+        border-radius: 10px;
+    }
+
+
+    .platform-right h3 {
+
+        margin-bottom: 10px;
+
+        font-size: 19px;
+
+        line-height: 26px;
+    }
+
+    .platform-right p {
+
+        margin-bottom: 18px;
+
+        font-size: 12px;
+
+        line-height: 18px;
+    }
+
+    .platform-right h4 {
+
+        margin-bottom: 12px;
+
+        font-size: 13px;
+
+        line-height: 18px;
+    }
+
+
+    /* =====================================================
+       ADMISSION LIST
+    ===================================================== */
+
+    .platform-right ul {
+
+        margin: 0 0 18px;
+
+        padding: 0;
+    }
+
+    .platform-right li {
+
+        gap: 6px;
+
+        margin-bottom: 9px;
+
+        font-size: 12px;
+
+        line-height: 17px;
+    }
+
+    .platform-right li img {
+
+        width: 9px;
+
+        height: 9px;
+
+        flex: 0 0 9px;
+    }
+
+
+    /* =====================================================
+       VIEW DETAILS
+    ===================================================== */
+
+    .btn-primary {
+
+        padding: 9px 14px;
+
+        font-size: 11px;
+
+        line-height: 16px;
+
+        border-radius: 30px;
+
+        gap: 5px;
+
+        transform: none;
+    }
+
+    .btn-primary img {
+
+        width: 9px;
+    }
+
+    .platform-right .btn-primary {
+
+        transform: translateY(20px);
+    }
+
+    .platform-right.is-visible .btn-primary {
+
+        transform: translateY(0);
+    }
 
 }
 
-.platform-card{
 
-flex-direction:column;
+/* =========================================================
+   SMALL PHONES
+========================================================= */
 
-}
+@media (max-width: 480px) {
 
-.platform-left,
-.platform-right{
+    .platform-overview {
+        padding: 32px 12px;
+    }
 
-width:100%;
 
-}
+    /* Header */
 
-.platform-tabs{
+    .section-title {
 
-overflow:auto;
+        max-width: 300px;
 
-gap:30px;
+        font-size: 24px;
 
-}
+        line-height: 29px;
+    }
 
-.section-title{
 
-font-size:38px;
+    /* Tabs */
 
-line-height:46px;
+    .platform-tabs {
 
-}
+        gap: 5px;
+
+        margin-bottom: 14px;
+    }
+
+    .platform-tabs .tab {
+
+        padding: 4px 8px;
+
+        font-size: 8px;
+
+        line-height: 13px;
+    }
+
+
+    /* Main card */
+
+    .platform-card {
+
+        padding: 5px;
+
+        gap: 8px;
+
+        border-radius: 10px;
+    }
+
+
+    /* Dashboard */
+
+    .platform-left {
+
+        min-height: 270px;
+
+        padding: 7px;
+
+        border-radius: 9px;
+    }
+
+    .dashboard-panel {
+
+        min-height: 250px;
+
+        padding: 10px;
+
+        border-radius: 9px;
+    }
+
+
+    /* Header */
+
+    .dashboard-icon {
+
+        width: 30px;
+        height: 30px;
+
+        flex-basis: 30px;
+    }
+
+    .dashboard-icon img {
+
+        width: 24px;
+        height: 24px;
+    }
+
+    .dashboard-heading h4 {
+
+        font-size: 12px;
+
+        line-height: 16px;
+    }
+
+    .dashboard-heading p {
+
+        font-size: 9px;
+
+        line-height: 12px;
+    }
+
+
+    /* Stats */
+
+    .dashboard-stat {
+
+        width: 57%;
+
+        height: 34px;
+
+        padding: 6px 9px;
+    }
+
+    .dashboard-stat span {
+
+        font-size: 10px;
+
+        line-height: 14px;
+    }
+
+    .dashboard-stat strong {
+
+        font-size: 11px;
+
+        line-height: 14px;
+    }
+
+    .dashboard-stat.applied {
+
+        left: -2px;
+
+        bottom: 30px;
+    }
+
+    .dashboard-stat.admitted {
+
+        right: -2px;
+
+        bottom: 2px;
+    }
+
+
+    /* Right card */
+
+    .platform-right {
+
+        padding: 14px;
+    }
+
+    .platform-right h3 {
+
+        font-size: 17px;
+
+        line-height: 23px;
+    }
+
+    .platform-right p {
+
+        font-size: 11px;
+
+        line-height: 17px;
+    }
+
+    .platform-right h4 {
+
+        font-size: 12px;
+
+        line-height: 17px;
+    }
+
+    .platform-right li {
+
+        font-size: 11px;
+
+        line-height: 16px;
+
+        margin-bottom: 8px;
+    }
+
+    .btn-primary {
+
+        padding: 8px 13px;
+
+        font-size: 10px;
+    }
 
 }
