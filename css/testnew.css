@@ -383,214 +383,220 @@ CONTENT
 
 }
 
-/* =========================================
-   TESTIMONIALS RESPONSIVE
-   ========================================= */
-
-
-/* =========================================
-   LARGE LAPTOP
-   ========================================= */
-
-@media (max-width: 1400px) {
-
-    .testimonials {
-        padding: 80px 60px;
-    }
-
-    .section-header {
-        margin-bottom: 55px;
-    }
-
-    .section-title {
-        font-size: 44px;
-        line-height: 1.1;
-    }
-
-    .testimonial-slider {
-        padding-right: 60px;
-    }
-}
-
-
-/* =========================================
-   LAPTOP
-   ========================================= */
-
-@media (max-width: 1200px) {
-
-    .testimonials {
-        padding: 70px 40px;
-    }
-
-    .section-header {
-        margin-bottom: 50px;
-    }
-
-    .section-title {
-        font-size: 40px;
-        line-height: 1.15;
-    }
-
-    .section-description {
-        font-size: 16px;
-        line-height: 24px;
-    }
-
-    .swiper-slide {
-        width: 480px !important;
-    }
-
-    .testimonial-content h4 {
-        font-size: 26px;
-    }
-}
-
-
-/* =========================================
-   TABLET LANDSCAPE
-   ========================================= */
-
-@media (max-width: 992px) {
-
-    .testimonials {
-        padding: 65px 30px;
-    }
-
-    .section-header {
-        margin-bottom: 45px;
-    }
-
-    .testimonial-badge {
-        font-size: 14px;
-        padding: 7px 14px;
-    }
-
-    .section-title {
-        font-size: 36px;
-        line-height: 1.2;
-    }
-
-    .section-description {
-        font-size: 16px;
-        line-height: 25px;
-    }
-
-    .testimonial-slider {
-        padding-right: 0;
-        overflow: hidden;
-    }
-
-    .swiper-slide {
-        width: 420px !important;
-    }
-
-    .testimonial-video {
-        height: 260px;
-    }
-
-    .play-btn {
-        width: 56px;
-        height: 56px;
-    }
-
-    .testimonial-content h4 {
-        font-size: 24px;
-    }
-
-    .testimonial-content span,
-    .testimonial-content p {
-        font-size: 15px;
-        line-height: 24px;
-    }
-}
-
-
-/* =========================================
-   TABLET
-   ========================================= */
-
 @media (max-width: 768px) {
 
     .testimonials {
         width: 100%;
-        padding: 60px 20px;
+        padding: 50px 16px 50px;
+        box-sizing: border-box;
         overflow: hidden;
     }
 
-    .section-header {
+    .testimonials .container {
         width: 100%;
-        margin-bottom: 35px;
+        max-width: 100%;
+        margin: 0 auto;
+    }
+
+
+    /* =====================================
+       HEADER
+    ===================================== */
+
+    .testimonials .section-header {
+        width: 100%;
+        max-width: 100%;
+
+        margin: 0 auto 32px;
+        padding: 0;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        gap: 0;
+
         text-align: center;
     }
 
-    .testimonial-badge {
+
+    /* BADGE */
+
+    .testimonials .testimonial-badge {
         display: inline-flex;
+
         align-items: center;
         justify-content: center;
+
+        width: fit-content;
+        max-width: 100%;
+
+        padding: 7px 14px;
+
+        margin: 0 0 22px;
 
         font-size: 13px;
         line-height: 18px;
 
-        padding: 5px 12px;
+        white-space: nowrap;
 
-        border-radius: 30px;
+        border-radius: 50px;
+        box-sizing: border-box;
     }
 
-    .section-title {
-        max-width: 600px;
-        margin: 16px auto 0;
+
+    /* TITLE */
+
+    .testimonials .section-title {
+
+        width: 100%;
+        max-width: 360px;
+
+        margin: 0 auto;
+
+        padding: 0;
 
         font-size: 32px;
-        line-height: 38px;
+        line-height: 40px;
+
+        font-weight: 600;
 
         text-align: center;
+
+        letter-spacing: -0.04em;
+
+        color: #000;
     }
 
-    .section-description {
-        max-width: 550px;
-        margin: 16px auto 0;
+
+    /* DESCRIPTION */
+
+    .testimonials .section-description {
+
+        width: 100%;
+        max-width: 360px;
+
+        margin: 18px auto 0;
+        padding: 0;
 
         font-size: 15px;
         line-height: 23px;
 
+        font-weight: 400;
+
         text-align: center;
+
+        letter-spacing: -0.02em;
+
+        color: #222;
     }
 
-    .btn-primary {
+
+    /* BUTTON */
+
+    .testimonials .btn-primary {
+
         display: inline-flex;
+
         align-items: center;
         justify-content: center;
 
-        margin-top: 18px;
+        width: fit-content;
 
-        padding: 11px 20px;
+        min-height: 36px;
 
-        font-size: 14px;
-        line-height: 20px;
+        margin: 18px auto 0;
+
+        padding: 9px 18px;
+
+        font-size: 13px;
+        line-height: 18px;
+
+        border-radius: 30px;
+
+        box-sizing: border-box;
     }
 
-    .testimonial-slider {
+
+    /* =====================================
+       SLIDER
+    ===================================== */
+
+    .testimonials .testimonial-slider {
+
         width: 100%;
+        max-width: 100%;
+
+        margin: 0;
         padding: 0;
+
         overflow: hidden;
     }
 
-    .swiper-slide {
-        width: 100% !important;
-        max-width: 100%;
+
+    .testimonials .swiper-wrapper {
+
+        width: 100%;
     }
 
-    .testimonial-video {
+
+    .testimonials .swiper-slide {
+
+        width: 100% !important;
+        max-width: 100% !important;
+
+        flex-shrink: 0;
+
+        margin: 0;
+        padding: 0;
+
+        box-sizing: border-box;
+    }
+
+
+    /* =====================================
+       TESTIMONIAL CARD
+    ===================================== */
+
+    .testimonials .testimonial-card {
+
+        width: 100%;
+        max-width: 100%;
+
+        margin: 0;
+        padding: 0;
+
+        box-sizing: border-box;
+    }
+
+
+    /* =====================================
+       VIDEO / IMAGE
+    ===================================== */
+
+    .testimonials .testimonial-video {
+
+        position: relative;
+
         width: 100%;
         height: auto;
+
         aspect-ratio: 1.15 / 1;
 
+        margin: 0;
+
         border-radius: 14px;
+
         overflow: hidden;
+
+        background: #e8edf8;
     }
 
-    .client-video {
+
+    .testimonials .client-video {
+
+        display: block;
+
         width: 100%;
         height: 100%;
 
@@ -599,263 +605,187 @@ CONTENT
         border-radius: 14px;
     }
 
-    .play-btn {
+
+    /* =====================================
+       PLAY BUTTON
+    ===================================== */
+
+    .testimonials .play-btn {
+
+        position: absolute;
+
+        left: 50%;
+        top: 50%;
+
         width: 52px;
         height: 52px;
+
+        padding: 0;
+
+        transform: translate(-50%, -50%);
+
+        border-radius: 50%;
     }
 
-    .play-btn img {
+    .testimonials .play-btn img {
+
         width: 18px;
         height: 18px;
     }
 
-    .testimonial-content {
-        padding-top: 16px;
+
+    /* =====================================
+       TESTIMONIAL TEXT
+    ===================================== */
+
+    .testimonials .testimonial-content {
+
+        width: 100%;
+
+        padding: 16px 0 0;
+
+        text-align: left;
+
+        box-sizing: border-box;
     }
 
-    .testimonial-content h4 {
+
+    .testimonials .testimonial-content h4 {
+
         margin: 0;
 
-        font-size: 22px;
+        font-size: 20px;
         line-height: 28px;
+
+        font-weight: 600;
+
+        color: #111;
     }
 
-    .testimonial-content span {
+
+    .testimonials .testimonial-content span {
+
         display: block;
 
-        margin-top: 4px;
+        margin: 3px 0 0;
 
         font-size: 14px;
         line-height: 21px;
+
+        color: #6b7280;
     }
 
-    .testimonial-content p {
-        margin-top: 12px;
+
+    .testimonials .testimonial-content p {
+
+        margin: 12px 0 0;
 
         font-size: 15px;
         line-height: 23px;
-    }
-}
 
+        font-weight: 400;
+
+        color: #222;
+
+        text-align: left;
+    }
+
+}
 
 /* =========================================
    MOBILE — MATCH REFERENCE IMAGE
    ========================================= */
-
 @media (max-width: 480px) {
 
     .testimonials {
-        width: 100%;
         padding: 40px 16px 40px 16px;
-        overflow: hidden;
+
     }
 
-
-    /* ---------- HEADER ---------- */
-
-    .section-header {
-        width: 100%;
-        margin-bottom: 35px;
-
-        text-align: center;
+    .testimonials .section-header {
+        margin-bottom: 28px;
     }
 
-
-    /* ---------- BADGE ---------- */
-
-    .testimonial-badge {
-        display: inline-flex;
-
-        align-items: center;
-        justify-content: center;
-
-        padding: 8px 16px;
-        gap: 8px;
-
+    .testimonials .testimonial-badge {
+        margin-bottom: 20px;
         font-size: 14px;
-        line-height: 100%;
+        padding: 8px 16px;
         font-weight: 500;
-
-        border: 1px solid #2f7cff;
-        border-radius: 20px;
-
-        white-space: nowrap;
     }
 
-
-    /* ---------- TITLE ---------- */
-
-    .section-title {
-        width: 100%;
-
+    .testimonials .section-title {
         max-width: 380px;
-        gap:8px;
-
-        margin: 17px auto 0;
+        font-weight: 600;
+        letter-spacing: -4%;
 
         font-size: 32px;
         line-height: 40px;
-        font-weight: 600;
-        font-family:'semibold',Inter,sans-serif;
-        color: #000000;
-
-
-        letter-spacing: -4%;
-
-        text-align: center;
     }
 
-
-    /* ---------- DESCRIPTION ---------- */
-
-    .section-description {
-        width: 100%;
+    .testimonials .section-description {
         max-width: 364px;
 
-        margin: 17px auto 0;
+        margin-top: 16px;
 
         font-size: 16px;
         line-height: 24px;
         font-weight: 400;
         letter-spacing: -4%;
-        font-style: normal;
-
-        text-align: center;
     }
 
+    .testimonials .btn-primary {
 
-    /* ---------- BUTTON ---------- */
-
-    .btn-primary {
-        display: inline-flex;
         width: fit-content;
+        margin-top: 16px;
 
-        align-items: center;
-        justify-content: center;
+        padding: 8px 22px;
 
-        margin-top: 17px;
-
-        min-height: 36px;
-
-        padding: 8px 17px;
-
-        font-size: 12px;
-        line-height: 18px;
-
-        border-radius: 30px;
+        font-size: 16px;
+        font-weight: 400;
+        border: 42px;
     }
 
 
-    /* ---------- SLIDER ---------- */
+    /* Image gets almost the complete available width */
 
-    .testimonial-slider {
-        width: 100%;
-        max-width: 100%;
+    .testimonials .testimonial-video {
+        max-width: 380px;
+        max-height: 335px;
 
-        margin: 0;
-        padding: 0;
+        aspect-ratio: 1.15 / 1;
 
-        overflow: hidden;
+        border-radius: 16px;
+        padding: 24px;
     }
 
 
-    /* ---------- SLIDE ---------- */
+    .testimonials .testimonial-content {
+        padding-top: 14px;
+        max-width: 380px;
+        max-height: 148px;
 
-    .swiper-slide {
-        width: 100% !important;
-        max-width: 100% !important;
-
-        margin: 0;
     }
 
-
-    /* ---------- VIDEO / IMAGE ---------- */
-
-    .testimonial-video {
-        width: 100%;
-
-        /*
-         * Reference:
-         * 300px screen
-         * 10px left + 10px right
-         * ≈ 280px content width
-         */
-
-        height: 238px;
-
-        border-radius: 10px;
-
-        overflow: hidden;
+    .testimonials .testimonial-content h4 {
+        font-size: 20px;
+        line-height: 100%;
+        font-weight: 500;
     }
 
-    .client-video {
-        display: block;
-
-        width: 100%;
-        height: 100%;
-
-        object-fit: cover;
-
-        border-radius: 10px;
+    .testimonials .testimonial-content span {
+        font-size: 18px;
+        line-height: 26px;
     }
 
+    .testimonials .testimonial-content p {
+        font-size: 18px;
+        line-height: 26px;
+        letter-spacing: -4%;
 
-    /* ---------- PLAY BUTTON ---------- */
-
-    .play-btn {
-        width: 46px;
-        height: 46px;
-
-        border-radius: 50%;
+        margin-top: 10px;
     }
 
-    .play-btn img {
-        width: 16px;
-        height: 16px;
-    }
-
-
-    /* ---------- TESTIMONIAL CONTENT ---------- */
-
-    .testimonial-content {
-        width: 100%;
-
-        padding-top: 17px;
-
-        text-align: left;
-    }
-
-
-    .testimonial-content h4 {
-        margin: 0;
-
-        font-size: 15px;
-        line-height: 20px;
-
-        font-weight: 600;
-    }
-
-
-    .testimonial-content span {
-        display: block;
-
-        margin-top: 2px;
-
-        font-size: 12px;
-        line-height: 18px;
-    }
-
-
-    .testimonial-content p {
-        margin-top: 12px;
-
-        font-size: 13px;
-        line-height: 18px;
-
-        text-align: left;
-    }
 }
-
 
 /* =========================================
    VERY SMALL PHONES
@@ -910,3 +840,4 @@ CONTENT
         line-height: 18px;
     }
 }
+
