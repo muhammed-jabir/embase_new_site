@@ -284,6 +284,62 @@
     object-fit: contain;
 }
 
+/* =========================================================
+   TWO-CHART DASHBOARD
+   Used only for Academic / Finance style layouts
+========================================================= */
+
+.dashboard-chart--split {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 135px;
+    gap: 14px;
+
+    background: transparent;
+    overflow: visible;
+
+    border-radius: 0;
+}
+
+
+/* Main chart */
+
+.dashboard-chart--split .dashboard-chart-main {
+    min-width: 0;
+
+    background: #fff;
+
+    border-radius: 12px;
+
+    overflow: hidden;
+}
+
+
+/* Side chart */
+
+.dashboard-chart--split .dashboard-chart-side {
+    min-width: 0;
+
+    background: #fff;
+
+    border-radius: 12px;
+
+    overflow: hidden;
+}
+
+
+/* Images */
+
+.dashboard-chart--split img {
+    display: block;
+
+    width: 100%;
+    height: auto;
+
+    max-width: none;
+
+    object-fit: contain;
+}
+
 /* Floating Cards */
 
 /* =========================================================
@@ -347,7 +403,106 @@
 
 }
 
+/* =========================================================
+    for acedmic management DIARY STAT CARDS
+   Used only for Academic-style dashboard
+========================================================= */
 
+.diary-stat {
+    gap: 12px;
+    justify-content: flex-start;
+}
+
+
+/* ICON */
+
+.diary-stat__icon {
+    width: 28px;
+    height: 28px;
+
+    flex: 0 0 28px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+
+}
+
+.diary-stat__icon img {
+    width: 32px;
+    height: 32px;
+
+    display: block;
+
+    object-fit: contain;
+}
+
+
+/* NUMBER */
+
+.diary-stat strong {
+    flex: 0 0 auto;
+
+    font-family: 'lato', sans-serif;
+
+    font-size: 16px;
+    line-height: 24px;
+
+    font-weight: 500;
+
+    color: #d90091;
+}
+
+
+/* DESCRIPTION */
+
+.diary-stat span {
+    font-family: 'lato', sans-serif;
+
+    font-size: 16px;
+    line-height: 24px;
+
+    font-weight: 400;
+
+    color: #464646;
+
+    white-space: nowrap;
+}
+
+
+/* =========================================================
+   FIRST CARD
+========================================================= */
+
+.diary-stat--teachers {
+    left: -26px;
+    bottom: 94px;
+
+    animation: appliedBoxEnter 0.8s
+        cubic-bezier(.22, 1, .36, 1)
+        0.4s
+        both;
+}
+
+
+/* =========================================================
+   SECOND CARD
+========================================================= */
+
+.diary-stat--course {
+    right: -26px;
+    bottom: 28px;
+
+    animation: admittedBoxEnter 0.8s
+        cubic-bezier(.22, 1, .36, 1)
+        0.6s
+        both;
+}
+
+ /* FOr admission adn finance*/
 /* =========================================================
    APPLIED
    Comes from LEFT
@@ -596,7 +751,7 @@
 
 
 .platform-item[data-theme="green"] .platform-card {
- background: linear-gradient(270deg, #95EBAB 0%, #E8FBED 100%);
+   background: linear-gradient(270deg, #95EBAB 0%, #E8FBED 100%);
 
 }
 
@@ -611,6 +766,19 @@
         #BDEFD2 -0.1%,
         #43B979 113.05%
     );
+}
+.platform-item[data-theme="pink"] .platform-card{
+    background: linear-gradient(270deg, #FFB5E8 0%, #FEEAF8 100%);
+
+}
+
+.platform-item[data-theme="pink"] .platform-left{
+    background: linear-gradient(109.22deg, #FFD6F2 2.21%, #FF81D7 95.42%);
+
+}
+.platform-item[data-theme="pink"] .dashboard-icon{
+    background: linear-gradient(134.05deg, #FFB5E8 -0.1%, #FF33BE 113.05%);
+
 }
 
 
