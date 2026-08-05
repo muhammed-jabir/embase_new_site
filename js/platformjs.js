@@ -71,92 +71,50 @@ document.addEventListener("DOMContentLoaded", function () {
        REPEAT ANIMATION WHEN PLATFORM SECTION ENTERS VIEW
     ========================================================= */
 
-    const platformOverview =
-        document.querySelector(".platform-overview");
+    const platformOverview = document.querySelector(".platform-overview");
 
-    if (!platformOverview) {
-        return;
-    }
+if (!platformOverview) {
+    return;
+}
 
+let hasAnimated = false;
 
-    const observer = new IntersectionObserver(
-        function (entries) {
+const observer = new IntersectionObserver(function(entries) {
 
-            entries.forEach(function (entry) {
+    entries.forEach(function(entry) {
 
-                const activeItem =
-                    document.querySelector(".platform-item.active");
-
-                if (!activeItem) {
-                    return;
-                }
-
-                const right =
-                    activeItem.querySelector(".platform-right");
-
-
-                /* -----------------------------------------
-                   SECTION ENTERS SCREEN
-                ----------------------------------------- */
-
-                if (entry.isIntersecting) {
-
-                    if (right) {
-
-                        /*
-                         * Remove animation first
-                         */
-                        right.classList.remove("is-visible");
-
-
-                        /*
-                         * Force browser to register
-                         * the hidden state
-                         */
-                        void right.offsetWidth;
-
-
-                        /*
-                         * Start animation again
-                         */
-                        requestAnimationFrame(function () {
-
-                            right.classList.add("is-visible");
-
-                        });
-
-                    }
-
-                }
-
-
-                /* -----------------------------------------
-                   SECTION LEAVES SCREEN
-                ----------------------------------------- */
-
-                else {
-
-                    if (right) {
-
-                        /*
-                         * Reset animation so it can
-                         * play again next time
-                         */
-                        right.classList.remove("is-visible");
-
-                    }
-
-                }
-
-            });
-
-        },
-        {
-            threshold: 0.25
+        if (!entry.isIntersecting || hasAnimated) {
+            return;
         }
-    );
 
+        const activeItem = document.querySelector(".platform-item.active");
 
-    observer.observe(platformOverview);
+        if (!activeItem) {
+            return;
+        }
 
+        const right = activeItem.querySelector(".platform-right");
+
+        if (right) {
+            right.classList.remove("is-visible");
+
+            void right.offsetWidth;
+
+            requestAnimationFrame(function () {
+                right.classList.add("is-visible");
+            });
+        }
+
+        hasAnimated = true;
+
+        // Stop observing after first animation
+        observer.unobserve(platformOverview);
+
+    });
+
+}, {
+    threshold: 0.25
+});
+
+observer.observe(platformOverview);
 });
