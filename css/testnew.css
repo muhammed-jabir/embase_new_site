@@ -383,11 +383,17 @@ CONTENT
 
 }
 
+
+
+/* =========================================
+   TESTIMONIALS — MOBILE
+   ========================================= */
+
 @media (max-width: 768px) {
 
     .testimonials {
         width: 100%;
-        padding: 50px 16px 50px;
+        padding: 40px 16px 40px;
         box-sizing: border-box;
         overflow: hidden;
     }
@@ -431,16 +437,18 @@ CONTENT
         width: fit-content;
         max-width: 100%;
 
-        padding: 7px 14px;
+        padding: 8px 16px;
 
-        margin: 0 0 22px;
+        margin: 0 0 20px;
 
-        font-size: 13px;
-        line-height: 18px;
+        font-size: 14px;
+        line-height: 100%;
+        font-weight: 500;
 
         white-space: nowrap;
 
         border-radius: 50px;
+
         box-sizing: border-box;
     }
 
@@ -448,12 +456,10 @@ CONTENT
     /* TITLE */
 
     .testimonials .section-title {
-
         width: 100%;
-        max-width: 360px;
+        max-width: 380px;
 
         margin: 0 auto;
-
         padding: 0;
 
         font-size: 32px;
@@ -463,7 +469,7 @@ CONTENT
 
         text-align: center;
 
-        letter-spacing: -0.04em;
+        letter-spacing: -4%;
 
         color: #000;
     }
@@ -472,21 +478,20 @@ CONTENT
     /* DESCRIPTION */
 
     .testimonials .section-description {
-
         width: 100%;
-        max-width: 360px;
+        max-width: 364px;
 
-        margin: 18px auto 0;
+        margin: 16px auto 0;
         padding: 0;
 
-        font-size: 15px;
-        line-height: 23px;
+        font-size: 16px;
+        line-height: 24px;
 
         font-weight: 400;
 
         text-align: center;
 
-        letter-spacing: -0.02em;
+        letter-spacing: -0.4px;
 
         color: #222;
     }
@@ -495,7 +500,6 @@ CONTENT
     /* BUTTON */
 
     .testimonials .btn-primary {
-
         display: inline-flex;
 
         align-items: center;
@@ -503,24 +507,22 @@ CONTENT
 
         width: fit-content;
 
-        min-height: 36px;
+        margin: 16px auto 0;
 
-        margin: 18px auto 0;
+        padding: 8px 22px;
 
-        padding: 9px 18px;
+        font-size: 16px;
+        line-height: 100%;
 
-        font-size: 13px;
-        line-height: 18px;
-
-        border-radius: 30px;
+        border-radius: 42px;
 
         box-sizing: border-box;
     }
 
 
     /* =====================================
-       SLIDER
-    ===================================== */
+       MOBILE SLIDER
+       ===================================== */
 
     .testimonials .testimonial-slider {
 
@@ -528,35 +530,111 @@ CONTENT
         max-width: 100%;
 
         margin: 0;
+
+        /*
+         * IMPORTANT:
+         * Allow horizontal finger swipe
+         */
+        overflow-x: auto;
+        overflow-y: hidden;
+
         padding: 0;
 
-        overflow: hidden;
+        scrollbar-width: none;
+
+        -webkit-overflow-scrolling: touch;
+
+        scroll-snap-type: x mandatory;
     }
 
 
-    .testimonials .swiper-wrapper {
+    /* Hide scrollbar */
 
-        width: 100%;
-    }
-
-
-    .testimonials .swiper-slide {
-
-        width: 100% !important;
-        max-width: 100% !important;
-
-        flex-shrink: 0;
-
-        margin: 0;
-        padding: 0;
-
-        box-sizing: border-box;
+    .testimonials .testimonial-slider::-webkit-scrollbar {
+        display: none;
     }
 
 
     /* =====================================
-       TESTIMONIAL CARD
-    ===================================== */
+       STOP DESKTOP MARQUEE
+       ===================================== */
+
+    .testimonials .swiper-wrapper.marquee-track {
+
+        /*
+         * KEEP ALL CARDS IN ONE ROW
+         */
+        display: flex;
+
+        flex-wrap: nowrap;
+
+        width: max-content;
+
+        gap: 16px;
+
+        /*
+         * VERY IMPORTANT
+         */
+        animation: none !important;
+
+        transform: none !important;
+
+        transition: none !important;
+
+        /*
+         * Don't let Swiper interfere
+         */
+        margin: 0;
+    }
+
+
+    /*
+     * Also stop paused state from doing
+     * anything strange on mobile.
+     */
+
+    .testimonials
+    .swiper-wrapper.marquee-track.is-paused {
+
+        animation: none !important;
+
+        transform: none !important;
+    }
+
+
+    /* =====================================
+       ONE CARD PER VIEW
+       ===================================== */
+
+    .testimonials .swiper-slide {
+
+        /*
+         * 16px left + 16px right
+         */
+        width: calc(100vw - 32px) !important;
+
+        max-width: calc(100vw - 32px) !important;
+
+        min-width: calc(100vw - 32px) !important;
+
+        flex: 0 0 calc(100vw - 32px);
+
+        margin: 0;
+
+        padding: 0;
+
+        box-sizing: border-box;
+
+        /*
+         * Each card snaps into place
+         */
+        scroll-snap-align: start;
+    }
+
+
+    /* =====================================
+       CARD
+       ===================================== */
 
     .testimonials .testimonial-card {
 
@@ -571,25 +649,33 @@ CONTENT
 
 
     /* =====================================
-       VIDEO / IMAGE
-    ===================================== */
+       IMAGE / VIDEO
+       ===================================== */
 
     .testimonials .testimonial-video {
 
         position: relative;
 
         width: 100%;
+
+        /*
+         * Reference image ratio
+         */
+        aspect-ratio: 1.30 / 1;
+
         height: auto;
 
-        aspect-ratio: 1.15 / 1;
-
         margin: 0;
+
+        padding: 0;
 
         border-radius: 14px;
 
         overflow: hidden;
 
         background: #e8edf8;
+
+        box-sizing: border-box;
     }
 
 
@@ -608,7 +694,7 @@ CONTENT
 
     /* =====================================
        PLAY BUTTON
-    ===================================== */
+       ===================================== */
 
     .testimonials .play-btn {
 
@@ -617,15 +703,27 @@ CONTENT
         left: 50%;
         top: 50%;
 
-        width: 52px;
-        height: 52px;
+        width: 50px;
+        height: 50px;
 
         padding: 0;
 
         transform: translate(-50%, -50%);
 
+        border: none;
+
         border-radius: 50%;
+
+        background: rgba(255, 255, 255, 0.82);
+
+        display: flex;
+
+        align-items: center;
+        justify-content: center;
+
+        z-index: 5;
     }
+
 
     .testimonials .play-btn img {
 
@@ -635,14 +733,18 @@ CONTENT
 
 
     /* =====================================
-       TESTIMONIAL TEXT
-    ===================================== */
+       CONTENT
+       ===================================== */
 
     .testimonials .testimonial-content {
 
         width: 100%;
 
-        padding: 16px 0 0;
+        padding: 14px 0 0;
+
+        margin: 0;
+
+        max-width: 100%;
 
         text-align: left;
 
@@ -653,13 +755,15 @@ CONTENT
     .testimonials .testimonial-content h4 {
 
         margin: 0;
-
+        gap: 10px;
         font-size: 20px;
-        line-height: 28px;
 
-        font-weight: 600;
+        line-height: 100%;
+        letter-spacing: -4%;
 
-        color: #111;
+        font-weight: 500;
+
+        color: #000;
     }
 
 
@@ -669,175 +773,28 @@ CONTENT
 
         margin: 3px 0 0;
 
-        font-size: 14px;
-        line-height: 21px;
+        font-size: 18px;
 
-        color: #6b7280;
+        line-height: 26px;
+
+        color: var(--color-neutral-700, #6C6C6C);
+
     }
 
 
     .testimonials .testimonial-content p {
 
-        margin: 12px 0 0;
+        margin: 10px 0 0;
 
-        font-size: 15px;
-        line-height: 23px;
+        font-size: 18px;
+
+        line-height: 26px;
 
         font-weight: 400;
+        letter-spacing: -4%;
 
         color: #222;
 
         text-align: left;
     }
-
 }
-
-/* =========================================
-   MOBILE — MATCH REFERENCE IMAGE
-   ========================================= */
-@media (max-width: 480px) {
-
-    .testimonials {
-        padding: 40px 16px 40px 16px;
-
-    }
-
-    .testimonials .section-header {
-        margin-bottom: 28px;
-    }
-
-    .testimonials .testimonial-badge {
-        margin-bottom: 20px;
-        font-size: 14px;
-        padding: 8px 16px;
-        font-weight: 500;
-    }
-
-    .testimonials .section-title {
-        max-width: 380px;
-        font-weight: 600;
-        letter-spacing: -4%;
-
-        font-size: 32px;
-        line-height: 40px;
-    }
-
-    .testimonials .section-description {
-        max-width: 364px;
-
-        margin-top: 16px;
-
-        font-size: 16px;
-        line-height: 24px;
-        font-weight: 400;
-        letter-spacing: -4%;
-    }
-
-    .testimonials .btn-primary {
-
-        width: fit-content;
-        margin-top: 16px;
-
-        padding: 8px 22px;
-
-        font-size: 16px;
-        font-weight: 400;
-        border: 42px;
-    }
-
-
-    /* Image gets almost the complete available width */
-
-    .testimonials .testimonial-video {
-        max-width: 380px;
-        max-height: 335px;
-
-        aspect-ratio: 1.15 / 1;
-
-        border-radius: 16px;
-        padding: 24px;
-    }
-
-
-    .testimonials .testimonial-content {
-        padding-top: 14px;
-        max-width: 380px;
-        max-height: 148px;
-
-    }
-
-    .testimonials .testimonial-content h4 {
-        font-size: 20px;
-        line-height: 100%;
-        font-weight: 500;
-    }
-
-    .testimonials .testimonial-content span {
-        font-size: 18px;
-        line-height: 26px;
-    }
-
-    .testimonials .testimonial-content p {
-        font-size: 18px;
-        line-height: 26px;
-        letter-spacing: -4%;
-
-        margin-top: 10px;
-    }
-
-}
-
-/* =========================================
-   VERY SMALL PHONES
-   ========================================= */
-
-@media (max-width: 360px) {
-
-    .testimonials {
-        padding: 24px 10px 35px;
-    }
-
-    .section-title {
-        max-width: 270px;
-
-        font-size: 22px;
-        line-height: 28px;
-    }
-
-    .section-description {
-        max-width: 270px;
-
-        font-size: 11.5px;
-        line-height: 17px;
-    }
-
-    .btn-primary {
-        margin-top: 16px;
-
-        min-height: 35px;
-
-        padding: 7px 16px;
-
-        font-size: 11.5px;
-    }
-
-    .testimonial-video {
-        height: 220px;
-    }
-
-    .testimonial-content h4 {
-        font-size: 15px;
-        line-height: 20px;
-    }
-
-    .testimonial-content span {
-        font-size: 11.5px;
-        line-height: 17px;
-    }
-
-    .testimonial-content p {
-        font-size: 12px;
-        line-height: 18px;
-    }
-}
-
