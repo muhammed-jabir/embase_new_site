@@ -1097,30 +1097,21 @@
     opacity: 1;
     transform: translateY(-12px);
 }
-
-/* ===========================
-   RESPONSIVE
-=========================== */
-
 /* =========================================================
-   ADMISSION MANAGEMENT - MOBILE RESPONSIVE
-   Desktop CSS above remains unchanged
+   PLATFORM OVERVIEW
+   MOBILE RESPONSIVE
+   Desktop CSS remains unchanged
 ========================================================= */
 
-/* =========================================================
-   ADMISSION MANAGEMENT
-   MOBILE VIEW
-========================================================= */
+@media (max-width: 480px) {
 
-@media (max-width: 992px) {
-
-    /* =========================
-       PLATFORM SECTION
-    ========================= */
+    /* =====================================================
+       MAIN SECTION
+    ===================================================== */
 
     .platform-overview {
         width: 100%;
-        padding: 40px 16px;
+        padding: 16px;
         box-sizing: border-box;
         overflow: hidden;
     }
@@ -1128,61 +1119,60 @@
     .platform-overview .container {
         width: 100%;
         max-width: 100%;
-        margin: 0 auto;
+        margin: 0;
     }
 
 
-    /* =========================
-       HEADER
-    ========================= */
+    /* =====================================================
+       SECTION HEADER
+    ===================================================== */
 
     .section-header {
-        gap: 10px;
-        margin-bottom: 18px;
+        gap: 12px;
+        margin-bottom: 28px;
     }
 
     .section-badge {
-        padding: 5px 10px;
-        font-size: 10px;
-        line-height: 14px;
+        padding: 7px 14px;
+        font-size: 14px;
     }
 
-    .section-title {
+    .platform-overview .section-title {
         width: 100%;
-        max-width: 330px;
+        max-width: 100%;
         max-height: none;
 
-        margin: 0 auto;
-
-        font-size: 26px;
-        line-height: 31px;
-
+        font-size: 32px;
+        line-height: 40px;
+      
         text-align: center;
     }
 
 
-    /* =========================
-       MOBILE TABS
-    ========================= */
+    /* =====================================================
+       TABS
+       Horizontal scrolling on mobile
+    ===================================================== */
 
     .platform-tabs {
         width: 100%;
 
         display: flex;
         justify-content: flex-start;
+        align-items: center;
 
-        gap: 6px;
+        gap: 4px;
 
-        margin-bottom: 18px;
-
-        padding: 0;
-
-        border: none;
+        margin-bottom: 24px;
 
         overflow-x: auto;
         overflow-y: hidden;
 
+        white-space: nowrap;
+
         scrollbar-width: none;
+
+        -webkit-overflow-scrolling: touch;
     }
 
     .platform-tabs::-webkit-scrollbar {
@@ -1190,108 +1180,51 @@
     }
 
     .platform-tabs .tab {
-
         flex: 0 0 auto;
 
-        padding: 5px 9px;
+        padding: 10px 12px;
 
-        border: 1px solid #AFCBFF;
-
-        border-radius: 20px;
-
-        background: #fff;
-
-        font-size: 9px;
-
-        line-height: 14px;
+        font-size: 14px;
+        line-height: 22px;
 
         white-space: nowrap;
-
-        color: #222;
     }
 
     .platform-tabs .tab.active {
-
-        background: var(--color-Blue-Ribbon-800, #1239BB);
-
-
-       border: 1px solid var(--color-Blue-Ribbon-400, #53A0FF);
-
-        color: #fff;
-
-        font-weight: 500;
+        border-bottom-width: 2px;
     }
 
 
     /* =====================================================
-       MAIN ADMISSION CARD
+       MAIN PLATFORM CARD
     ===================================================== */
 
     .platform-card {
-
         width: 100%;
 
         display: flex;
-
         flex-direction: column;
 
-        gap: 10px;
+        gap: 16px;
 
-        padding: 6px;
+        padding: 12px;
 
         box-sizing: border-box;
 
-        border-radius: 12px;
-
-        background:
-            linear-gradient(
-                270deg,
-                #BAD9FF 0%,
-                #EEF5FF 100%
-            );
+        border-radius: 14px;
     }
 
 
     /* =====================================================
-       ADMISSION DASHBOARD
+       LEFT DASHBOARD
     ===================================================== */
 
     .platform-left {
-
         width: 100%;
+        min-width: 0;
 
         height: auto;
-
-        min-height: 300px;
-
-        padding: 8px;
-
-        box-sizing: border-box;
-
-        border-radius: 10px;
-
-        background:
-            linear-gradient(
-                109.22deg,
-                #D8E9FF 2.21%,
-                #8AC1FF 95.42%
-            );
-
-        overflow: visible;
-    }
-
-
-    .dashboard-panel {
-
-        width: 100%;
-
-        height: auto;
-
-        min-height: 280px;
-
-        max-width: none;
-
-        max-height: none;
+        min-height: 0;
 
         padding: 12px;
 
@@ -1299,7 +1232,32 @@
 
         border-radius: 10px;
 
-        overflow: visible;
+        overflow: hidden;
+
+        display: block;
+    }
+
+
+    /* =====================================================
+       DASHBOARD PANEL
+    ===================================================== */
+
+    .dashboard-panel {
+        width: 100%;
+        height: auto;
+
+        max-width: 100%;
+        max-height: none;
+
+        padding: 14px;
+
+        box-sizing: border-box;
+
+        border-radius: 10px;
+
+        overflow: hidden;
+
+        animation: none !important;
     }
 
 
@@ -1308,42 +1266,33 @@
     ===================================================== */
 
     .dashboard-header {
-
-        gap: 8px;
+        gap: 10px;
     }
 
     .dashboard-icon {
+        width: 38px;
+        height: 38px;
 
-        width: 34px;
-        height: 34px;
+        flex: 0 0 38px;
 
-        flex: 0 0 34px;
-
-        border-radius: 8px;
+        border-radius: 9px;
     }
 
     .dashboard-icon img {
-
-        width: 28px;
-        height: 28px;
+        width: 32px;
+        height: 32px;
     }
 
     .dashboard-heading h4 {
+        margin-bottom: 2px;
 
-        margin: 0 0 2px;
-
-        font-size: 14px;
-
-        line-height: 18px;
+        font-size: 16px;
+        line-height: 21px;
     }
 
     .dashboard-heading p {
-
-        font-size: 10px;
-
-        line-height: 14px;
-
-        white-space: normal;
+        font-size: 13px;
+        line-height: 19px;
     }
 
 
@@ -1352,33 +1301,30 @@
     ===================================================== */
 
     .dashboard-divider {
-
-        margin-top: 10px;
-
-        margin-bottom: 10px;
+        margin-top: 12px;
+        margin-bottom: 12px;
     }
 
 
     /* =====================================================
-       ADMISSION CHART
+       DASHBOARD CHART
     ===================================================== */
 
     .dashboard-chart {
-
         width: 100%;
 
-        border-radius: 8px;
+        border-radius: 9px;
+
+        animation: none !important;
 
         overflow: hidden;
-
-        background: #fff;
     }
 
     .dashboard-chart img {
-
         width: 100%;
-
         height: auto;
+
+        max-width: 100%;
 
         display: block;
 
@@ -1387,773 +1333,336 @@
 
 
     /* =====================================================
-       APPLIED / ADMITTED
+       SPLIT DASHBOARD
+       Academic / Finance etc.
+    ===================================================== */
+
+    .dashboard-chart--split {
+        display: grid;
+
+        grid-template-columns: minmax(0, 1fr) 90px;
+
+        gap: 8px;
+
+        width: 100%;
+
+        overflow: hidden;
+    }
+
+    .dashboard-chart--split .dashboard-chart-main,
+    .dashboard-chart--split .dashboard-chart-side {
+        width: 100%;
+        min-width: 0;
+
+        border-radius: 8px;
+
+        overflow: hidden;
+    }
+
+    .dashboard-chart--split img {
+        width: 100%;
+        max-width: 100%;
+        height: auto;
+    }
+
+
+    /* =====================================================
+       HIDE DESKTOP FLOATING STAT BOXES
+       
+       Applied / Admitted
+       Teachers / Course Diary
+    ===================================================== */
+
+    .dashboard-stat.applied,
+    .dashboard-stat.admitted,
+    .diary-stat--teachers,
+    .diary-stat--course {
+        display: none !important;
+    }
+
+
+    /* =====================================================
+       DISABLE FLOATING CARD ANIMATIONS
     ===================================================== */
 
     .dashboard-stat {
-
-        width: 58%;
-
-        height: 38px;
-
-        padding: 7px 10px;
-
-        border-radius: 9px;
-
-        box-sizing: border-box;
+        animation: none !important;
     }
 
-    .dashboard-stat span {
-
-        font-size: 11px;
-
-        line-height: 16px;
-    }
-
-    .dashboard-stat strong {
-
-        font-size: 12px;
-
-        line-height: 16px;
-    }
-
-
-    /* Applied */
-
-    .dashboard-stat.applied {
-
-        left: -3px;
-
-        bottom: 34px;
-    }
-
-
-    /* Admitted */
-
-    .dashboard-stat.admitted {
-
-        right: -3px;
-
-        bottom: 3px;
+    .diary-stat {
+        animation: none !important;
     }
 
 
     /* =====================================================
-       RIGHT ADMISSION CONTENT
+       EXAMINATION DASHBOARD
     ===================================================== */
 
-    .platform-right {
-
+    .examination-dashboard {
         width: 100%;
 
-        max-width: none;
-
-        max-height: none;
-
-        padding: 16px;
-
-        box-sizing: border-box;
-
-        border-radius: 10px;
+        overflow: hidden;
     }
 
-
-    .platform-right h3 {
-
-        margin-bottom: 10px;
-
-        font-size: 19px;
-
-        line-height: 26px;
-    }
-
-    .platform-right p {
-
-        margin-bottom: 18px;
-
-        font-size: 12px;
-
-        line-height: 18px;
-    }
-
-    .platform-right h4 {
-
-        margin-bottom: 12px;
-
-        font-size: 13px;
-
-        line-height: 18px;
-    }
-
-
-    /* =====================================================
-       ADMISSION LIST
-    ===================================================== */
-
-    .platform-right ul {
-
-        margin: 0 0 18px;
-
-        padding: 0;
-    }
-
-    .platform-right li {
-
-        gap: 6px;
-
-        margin-bottom: 9px;
-
-        font-size: 12px;
-
-        line-height: 17px;
-    }
-
-    .platform-right li img {
-
-        width: 9px;
-
-        height: 9px;
-
-        flex: 0 0 9px;
-    }
-
-
-    /* =====================================================
-       VIEW DETAILS
-    ===================================================== */
-
-    .btn-primary {
-
-        padding: 9px 14px;
-
-        font-size: 11px;
-
-        line-height: 16px;
-
-        border-radius: 30px;
-
-        gap: 5px;
-
-        transform: none;
-    }
-
-    .btn-primary img {
-
-        width: 9px;
-    }
-
-    .platform-right .btn-primary {
-
-        transform: translateY(20px);
-    }
-
-    .platform-right.is-visible .btn-primary {
-
-        transform: translateY(0);
-    }
-
-}
-
-
-/* =========================================================
-   SMALL PHONES
-========================================================= */
-
-@media (max-width: 480px) {
-
-    /* ==========================================
-       PLATFORM OVERVIEW
-    ========================================== */
-
-    .platform-overview {
-        width: 100%;
-        padding: 60px 16px;
-        box-sizing: border-box;
-        background: #F8FAFF;
-    }
-
-
-    /* ==========================================
-       HEADER
-    ========================================== */
-
-    .platform-overview .section-badge {
-        width: fit-content;
-
-        padding: 8px 16px;
-
-        font-size: 14px;
-        line-height: 100%;
-        font-weight: 500;
-    }
-
-
-    .platform-overview .section-title {
-        width: 100%;
-        max-width: 380px;
-
-        margin: 0 auto;
-
-        font-size: 32px !important;
-        line-height: 40px !important;
-
-        max-height: none;
-
-        letter-spacing: -0.4px;
-
-        font-weight: 600;
-        text-align: center;
-    }
-
-
-    /* ==========================================
-       TABS
-    ========================================== */
-
-    .platform-overview .platform-tabs {
+    .exam-grid {
         width: 100%;
 
-        display: flex;
-
-        gap: 6px;
-
-        margin-bottom: 16px;
-
-        overflow-x: auto;
-
-        scrollbar-width: none;
-    }
-
-    .platform-overview .platform-tabs::-webkit-scrollbar {
-        display: none;
-    }
-
-
-    .platform-overview .platform-tabs .tab {
-        flex-shrink: 0;
-
-        padding: 8px 12px;
-
-        font-size: 13px;
-        line-height: 20px;
-
-        white-space: nowrap;
-    }
-
-
-    /* ==========================================
-       PLATFORM CONTENT
-    ========================================== */
-
-    .platform-overview .platform-content {
-        width: 100%;
-    }
-
-
-    .platform-overview .platform-item {
-        width: 100%;
-    }
-
-
-    /* ==========================================
-       MAIN CARD
-    ========================================== */
-
-    .platform-overview .platform-card {
-        width: 100%;
-        max-width: 380px;
-
-        margin: 0 auto;
-
-        padding: 6px;
-
-        box-sizing: border-box;
-
-        display: flex;
-        flex-direction: column;
-
-        gap: 16px;
-
-        border-radius: 12px;
-
-        background: url("/assets/images/dotframe.png");
-        background-size: cover;
-        background-position: center;
-    }
-
-
-    /* ==========================================
-       LEFT DASHBOARD
-    ========================================== */
-
-    .platform-overview .platform-left {
-        width: 100%;
-
-        min-height: 0;
-        height: auto;
-
-        padding: 7px;
-
-        box-sizing: border-box;
-
-        border-radius: 10px;
-    }
-
-
-    .platform-overview .dashboard-panel {
-        width: 100%;
-
-        min-height: 0;
-        height: auto;
-
-        padding: 10px;
-
-        box-sizing: border-box;
-
-        border-radius: 9px;
-    }
-
-
-    /* ==========================================
-       DASHBOARD HEADER
-    ========================================== */
-
-    .platform-overview .dashboard-header {
-        width: 100%;
-
-        display: flex;
-        align-items: center;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
 
         gap: 8px;
     }
 
+    .exam-card {
+        width: 100%;
+        height: auto;
+        min-height: 78px;
 
-    .platform-overview .dashboard-icon {
-        width: 30px;
-        height: 30px;
+        padding: 10px;
 
-        flex: 0 0 30px;
+        border-radius: 9px;
     }
 
-
-    .platform-overview .dashboard-icon img {
-        width: 24px;
-        height: 24px;
-
-        object-fit: contain;
+    .exam-card-title {
+        gap: 7px;
     }
 
+    .exam-icon {
+        width: 28px;
+        height: 28px;
 
-    .platform-overview .dashboard-heading {
-        min-width: 0;
+        flex: 0 0 28px;
     }
 
-
-    .platform-overview .dashboard-heading h4 {
-        font-size: 12px;
-        line-height: 16px;
+    .exam-icon img {
+        width: 27px !important;
+        height: 27px !important;
     }
 
+    .exam-card h5 {
+        margin-bottom: 2px;
 
-    .platform-overview .dashboard-heading p {
+        font-size: 13px;
+        line-height: 18px;
+    }
+
+    .exam-card strong {
+        font-size: 13px;
+        line-height: 18px;
+    }
+
+    .exam-card p {
+        margin-top: 1px;
+
         font-size: 9px;
         line-height: 12px;
     }
 
 
-    /* ==========================================
-       DIVIDER
-    ========================================== */
+    /* =====================================================
+       DIGITAL CERTIFICATION
+    ===================================================== */
 
-    .platform-overview .dashboard-divider {
-        margin: 8px 0;
-    }
-
-
-    /* ==========================================
-       NORMAL DASHBOARD CHART
-       
-       Admission + Finance
-    ========================================== */
-
-    .platform-overview .dashboard-chart {
-        width: 100%;
-        height: auto;
-
-        display: flex;
-        justify-content: center;
-        align-items: center;
-
-        overflow: hidden;
-    }
-
-
-    .platform-overview .dashboard-chart > img {
-        display: block;
-
-        width: 100%;
-        max-width: 100%;
-
-        height: auto;
-
-        object-fit: contain;
-    }
-
-
-    /* ==========================================
-       ADMISSION / FINANCE SPECIFIC
-    ========================================== */
-
-    .platform-overview
-    .platform-item[data-content="admission"]
-    .dashboard-chart img,
-
-    .platform-overview
-    .platform-item[data-content="finance"]
-    .dashboard-chart img {
-        width: 100%;
-        height: auto;
-
-        object-fit: contain;
-    }
-
-
-    /* ==========================================
-       FLOATING STATS
-    ========================================== */
-
-    .platform-overview .dashboard-stat {
-        width: 57%;
-        height: 34px;
-
-        padding: 6px 9px;
-
-        box-sizing: border-box;
-    }
-
-
-    .platform-overview .dashboard-stat span {
-        font-size: 10px;
-        line-height: 14px;
-    }
-
-
-    .platform-overview .dashboard-stat strong {
-        font-size: 11px;
-        line-height: 14px;
-    }
-
-
-    .platform-overview .dashboard-stat.applied {
-        left: -2px;
-        bottom: 30px;
-    }
-
-
-    .platform-overview .dashboard-stat.admitted {
-        right: -2px;
-        bottom: 2px;
-    }
-
-
-    /* ==========================================
-       ACADEMIC DASHBOARD
-    ========================================== */
-
-    .platform-overview
-    .platform-item[data-content="academic"]
-    .dashboard-chart--split {
-
-        width: 100%;
-
-        display: flex;
-
-        gap: 6px;
-
-        align-items: stretch;
-
-        overflow: hidden;
-    }
-
-
-    .platform-overview
-    .platform-item[data-content="academic"]
-    .dashboard-chart-main {
-
-        flex: 1;
-        min-width: 0;
-    }
-
-
-    .platform-overview
-    .platform-item[data-content="academic"]
-    .dashboard-chart-side {
-
-        width: 28%;
-        min-width: 0;
-    }
-
-
-    .platform-overview
-    .platform-item[data-content="academic"]
-    .dashboard-chart-main img,
-
-    .platform-overview
-    .platform-item[data-content="academic"]
-    .dashboard-chart-side img {
-
-        display: block;
-
-        width: 100%;
-        height: auto;
-
-        object-fit: contain;
-    }
-
-
-    /* Academic floating cards */
-
-    .platform-overview
-    .platform-item[data-content="academic"]
-    .diary-stat {
-
-        max-width: 48%;
-        box-sizing: border-box;
-    }
-
-
-    /* ==========================================
-       EXAMINATION DASHBOARD
-    ========================================== */
-
-    .platform-overview
-    .platform-item[data-content="examination"]
-    .examination-dashboard {
-
-        width: 100%;
-
-        overflow: hidden;
-    }
-
-
-    .platform-overview
-    .platform-item[data-content="examination"]
-    .exam-grid {
-
-        width: 100%;
-
-        display: grid;
-
-        grid-template-columns: 1fr 1fr;
-
-        gap: 6px;
-    }
-
-
-    .platform-overview
-    .platform-item[data-content="examination"]
-    .exam-card {
-
-        min-width: 0;
-
-        padding: 7px;
-
-        border-radius: 7px;
-
-        box-sizing: border-box;
-    }
-
-
-    .platform-overview
-    .platform-item[data-content="examination"]
-    .exam-card-title {
-
-        display: flex;
-
-        align-items: center;
-
-        gap: 5px;
-    }
-
-
-    .platform-overview
-    .platform-item[data-content="examination"]
-    .exam-icon {
-
-        width: 22px;
-        height: 22px;
-
-        flex: 0 0 22px;
-    }
-
-
-    .platform-overview
-    .platform-item[data-content="examination"]
-    .exam-icon img {
-
-        width: 100%;
-        height: 100%;
-
-        object-fit: contain;
-    }
-
-
-    .platform-overview
-    .platform-item[data-content="examination"]
-    .exam-card h5 {
-
-        font-size: 7px;
-        line-height: 10px;
-    }
-
-
-    .platform-overview
-    .platform-item[data-content="examination"]
-    .exam-card strong {
-
-        font-size: 10px;
-        line-height: 13px;
-    }
-
-
-    .platform-overview
-    .platform-item[data-content="examination"]
-    .exam-card p {
-
-        font-size: 6px;
-        line-height: 9px;
-    }
-
-
-    /* Certification */
-
-    .platform-overview
-    .platform-item[data-content="examination"]
     .certification-card {
-
-        grid-column: 1 / -1;
-
         width: 100%;
+        height: 62px;
 
-        min-height: 55px;
+        border-radius: 9px;
     }
 
-
-    .platform-overview
-    .platform-item[data-content="examination"]
     .certification-bg {
+        width: 55%;
+        max-width: none;
 
-        width: 100%;
-        height: 100%;
+        height: 62px;
+
+        right: 0;
+        bottom: 0;
 
         object-fit: cover;
+        object-position: right center;
+    }
+
+    .certification-content {
+        padding: 10px 12px;
+    }
+
+    .certification-card h5 {
+        margin-bottom: 2px;
+
+        font-size: 13px;
+        line-height: 18px;
+    }
+
+    .certification-card strong {
+        font-size: 13px;
+        line-height: 18px;
     }
 
 
-    .platform-overview
-    .platform-item[data-content="examination"]
-    .certification-content h5 {
+    /* =====================================================
+       EXAMINATION BOTTOM TEXT
+    ===================================================== */
 
-        font-size: 8px;
-    }
-
-
-    .platform-overview
-    .platform-item[data-content="examination"]
-    .certification-content strong {
-
-        font-size: 16px;
-    }
-
-
-    .platform-overview
-    .platform-item[data-content="examination"]
     .exam-dashboard-text {
+        margin: 14px 0 0;
 
-        font-size: 8px;
-        line-height: 12px;
-
-        margin-top: 7px;
+        font-size: 13px;
+        line-height: 20px;
     }
 
 
-    /* ==========================================
+    /* =====================================================
        RIGHT CONTENT
-    ========================================== */
+    ===================================================== */
 
-    .platform-overview .platform-right {
+    .platform-right {
         width: 100%;
+        max-width: 100%;
+        max-height: none;
 
-        padding: 14px;
+        padding: 18px;
 
         box-sizing: border-box;
 
         border-radius: 10px;
+
+        gap: 12px;
+
+        /* Immediately visible on mobile */
+        opacity: 1;
+        transform: none;
+
+        transition: none;
     }
 
 
-    .platform-overview .platform-right h3 {
-        font-size: 20px;
-        line-height: 28px;
+    /* =====================================================
+       DISABLE RIGHT CONTENT ANIMATIONS
+    ===================================================== */
+
+    .platform-right h3,
+    .platform-right p,
+    .platform-right h4,
+    .platform-right li,
+    .platform-right .btn-primary {
+        opacity: 1;
+        transform: none;
+
+        transition: none !important;
+
+        transition-delay: 0s !important;
     }
 
 
-    .platform-overview .platform-right p {
+    /* =====================================================
+       RIGHT HEADING
+    ===================================================== */
+
+    .platform-right h3 {
+        margin: 0 0 12px;
+
+        font-size: 24px;
+        line-height: 29px;
+    }
+
+
+    /* =====================================================
+       RIGHT DESCRIPTION
+    ===================================================== */
+
+    .platform-right p {
+        margin: 0 0 20px;
+
+        font-size: 16px;
+        line-height: 22px;
+    }
+
+
+    /* =====================================================
+       RIGHT SUB HEADING
+    ===================================================== */
+
+    .platform-right h4 {
+        margin: 0 0 14px;
+
         font-size: 16px;
         line-height: 24px;
-        letter-spacing: -4%;
-    }
-
-
-    .platform-overview .platform-right h4 {
-        font-size: 16px;
-        line-height: 24px;
-
-
         font-weight: 500;
     }
 
 
-    .platform-overview .platform-right ul {
-        padding: 0;
-        margin: 0;
+    /* =====================================================
+       RIGHT LIST
+    ===================================================== */
+
+    .platform-right ul {
+        margin: 0 0 24px;
     }
 
+    .platform-right li {
+        gap: 7px;
 
-    .platform-overview .platform-right li {
-        display: flex;
-        align-items: center;
-
-        gap: 6px;
-        font-weight: 400;
+        margin-bottom: 12px;
 
         font-size: 16px;
         line-height: 24px;
-
-        margin-bottom: 8px;
-
-        letter-spacing: normal;
     }
 
-
-    .platform-overview .platform-right li img {
+    .platform-right li img {
         width: 12px;
-        height: 12px;
+        height: auto;
 
-        flex-shrink: 0;
+        flex: 0 0 auto;
     }
 
 
-    .platform-overview .btn-primary {
+    /* =====================================================
+       BUTTON
+    ===================================================== */
+
+    .platform-right .btn-primary {
         display: inline-flex;
-        align-items: center;
-        justify-content: center;
 
-        gap: 7px;
+        width: fit-content;
 
-        padding: 8px 22px;
+        padding: 12px 16px;
 
-        font-size: 16px;
+        gap: 6px;
+
+        font-size: 14px;
+
+        transform: none !important;
+    }
+
+    .platform-right .btn-primary img {
+        width: 9px;
+    }
+
+
+    /* =====================================================
+       PLATFORM CONTENT
+    ===================================================== */
+
+    .platform-content {
+        width: 100%;
+    }
+
+    .platform-item {
+        width: 100%;
+    }
+
+
+    /* =====================================================
+       REMOVE ALL POSSIBLE MOBILE OVERFLOW
+    ===================================================== */
+
+    .platform-card,
+    .platform-left,
+    .platform-right,
+    .dashboard-panel,
+    .dashboard-chart,
+    .dashboard-chart--split {
+        max-width: 100%;
     }
 
 }
