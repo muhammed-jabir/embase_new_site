@@ -52,15 +52,19 @@ document.addEventListener("DOMContentLoaded", function () {
             const selectedRight =
                 selectedItem.querySelector(".platform-right");
 
-            if (selectedRight) {
+          if (selectedRight) {
 
-                requestAnimationFrame(function () {
-                    requestAnimationFrame(function () {
-                        selectedRight.classList.add("is-visible");
-                    });
-                });
+    if (window.innerWidth <= 480) {
+        selectedRight.classList.add("is-visible");
+    } else {
+        requestAnimationFrame(function () {
+            requestAnimationFrame(function () {
+                selectedRight.classList.add("is-visible");
+            });
+        });
+    }
 
-            }
+}
 
         });
 
