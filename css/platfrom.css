@@ -1561,188 +1561,599 @@
 
 @media (max-width: 480px) {
 
+    /* ==========================================
+       PLATFORM OVERVIEW
+    ========================================== */
+
     .platform-overview {
-        padding: 32px 12px;
+        width: 100%;
+        padding: 60px 16px;
+        box-sizing: border-box;
+        background: #F8FAFF;
     }
 
 
-    /* Header */
+    /* ==========================================
+       HEADER
+    ========================================== */
 
-    .section-title {
+    .platform-overview .section-badge {
+        width: fit-content;
 
-        max-width: 300px;
+        padding: 8px 16px;
 
-        font-size: 24px;
-
-        line-height: 29px;
+        font-size: 14px;
+        line-height: 100%;
+        font-weight: 500;
     }
 
 
-    /* Tabs */
+    .platform-overview .section-title {
+        width: 100%;
+        max-width: 380px;
 
-    .platform-tabs {
+        margin: 0 auto;
 
-        gap: 5px;
+        font-size: 32px !important;
+        line-height: 40px !important;
 
-        margin-bottom: 14px;
+        max-height: none;
+
+        letter-spacing: -0.4px;
+
+        font-weight: 600;
+        text-align: center;
     }
 
-    .platform-tabs .tab {
 
-        padding: 4px 8px;
+    /* ==========================================
+       TABS
+    ========================================== */
 
-        font-size: 8px;
+    .platform-overview .platform-tabs {
+        width: 100%;
 
-        line-height: 13px;
+        display: flex;
+
+        gap: 6px;
+
+        margin-bottom: 16px;
+
+        overflow-x: auto;
+
+        scrollbar-width: none;
+    }
+
+    .platform-overview .platform-tabs::-webkit-scrollbar {
+        display: none;
     }
 
 
-    /* Main card */
+    .platform-overview .platform-tabs .tab {
+        flex-shrink: 0;
 
-    .platform-card {
+        padding: 8px 12px;
 
-        padding: 5px;
+        font-size: 13px;
+        line-height: 20px;
 
-        gap: 8px;
+        white-space: nowrap;
+    }
+
+
+    /* ==========================================
+       PLATFORM CONTENT
+    ========================================== */
+
+    .platform-overview .platform-content {
+        width: 100%;
+    }
+
+
+    .platform-overview .platform-item {
+        width: 100%;
+    }
+
+
+    /* ==========================================
+       MAIN CARD
+    ========================================== */
+
+    .platform-overview .platform-card {
+        width: 100%;
+        max-width: 380px;
+
+        margin: 0 auto;
+
+        padding: 6px;
+
+        box-sizing: border-box;
+
+        display: flex;
+        flex-direction: column;
+
+        gap: 16px;
+
+        border-radius: 12px;
+
+        background: url("/assets/images/dotframe.png");
+        background-size: cover;
+        background-position: center;
+    }
+
+
+    /* ==========================================
+       LEFT DASHBOARD
+    ========================================== */
+
+    .platform-overview .platform-left {
+        width: 100%;
+
+        min-height: 0;
+        height: auto;
+
+        padding: 7px;
+
+        box-sizing: border-box;
 
         border-radius: 10px;
     }
 
 
-    /* Dashboard */
+    .platform-overview .dashboard-panel {
+        width: 100%;
 
-    .platform-left {
-
-        min-height: 270px;
-
-        padding: 7px;
-
-        border-radius: 9px;
-    }
-
-    .dashboard-panel {
-
-        min-height: 250px;
+        min-height: 0;
+        height: auto;
 
         padding: 10px;
 
+        box-sizing: border-box;
+
         border-radius: 9px;
     }
 
 
-    /* Header */
+    /* ==========================================
+       DASHBOARD HEADER
+    ========================================== */
 
-    .dashboard-icon {
+    .platform-overview .dashboard-header {
+        width: 100%;
 
+        display: flex;
+        align-items: center;
+
+        gap: 8px;
+    }
+
+
+    .platform-overview .dashboard-icon {
         width: 30px;
         height: 30px;
 
-        flex-basis: 30px;
+        flex: 0 0 30px;
     }
 
-    .dashboard-icon img {
 
+    .platform-overview .dashboard-icon img {
         width: 24px;
         height: 24px;
+
+        object-fit: contain;
     }
 
-    .dashboard-heading h4 {
 
+    .platform-overview .dashboard-heading {
+        min-width: 0;
+    }
+
+
+    .platform-overview .dashboard-heading h4 {
         font-size: 12px;
-
         line-height: 16px;
     }
 
-    .dashboard-heading p {
 
+    .platform-overview .dashboard-heading p {
         font-size: 9px;
-
         line-height: 12px;
     }
 
 
-    /* Stats */
+    /* ==========================================
+       DIVIDER
+    ========================================== */
 
-    .dashboard-stat {
+    .platform-overview .dashboard-divider {
+        margin: 8px 0;
+    }
 
+
+    /* ==========================================
+       NORMAL DASHBOARD CHART
+       
+       Admission + Finance
+    ========================================== */
+
+    .platform-overview .dashboard-chart {
+        width: 100%;
+        height: auto;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        overflow: hidden;
+    }
+
+
+    .platform-overview .dashboard-chart > img {
+        display: block;
+
+        width: 100%;
+        max-width: 100%;
+
+        height: auto;
+
+        object-fit: contain;
+    }
+
+
+    /* ==========================================
+       ADMISSION / FINANCE SPECIFIC
+    ========================================== */
+
+    .platform-overview
+    .platform-item[data-content="admission"]
+    .dashboard-chart img,
+
+    .platform-overview
+    .platform-item[data-content="finance"]
+    .dashboard-chart img {
+        width: 100%;
+        height: auto;
+
+        object-fit: contain;
+    }
+
+
+    /* ==========================================
+       FLOATING STATS
+    ========================================== */
+
+    .platform-overview .dashboard-stat {
         width: 57%;
-
         height: 34px;
 
         padding: 6px 9px;
+
+        box-sizing: border-box;
     }
 
-    .dashboard-stat span {
 
+    .platform-overview .dashboard-stat span {
         font-size: 10px;
-
         line-height: 14px;
     }
 
-    .dashboard-stat strong {
 
+    .platform-overview .dashboard-stat strong {
         font-size: 11px;
-
         line-height: 14px;
     }
 
-    .dashboard-stat.applied {
 
+    .platform-overview .dashboard-stat.applied {
         left: -2px;
-
         bottom: 30px;
     }
 
-    .dashboard-stat.admitted {
 
+    .platform-overview .dashboard-stat.admitted {
         right: -2px;
-
         bottom: 2px;
     }
 
 
-    /* Right card */
+    /* ==========================================
+       ACADEMIC DASHBOARD
+    ========================================== */
 
-    .platform-right {
+    .platform-overview
+    .platform-item[data-content="academic"]
+    .dashboard-chart--split {
 
-        padding: 14px;
+        width: 100%;
+
+        display: flex;
+
+        gap: 6px;
+
+        align-items: stretch;
+
+        overflow: hidden;
     }
 
-    .platform-right h3 {
 
-        font-size: 17px;
+    .platform-overview
+    .platform-item[data-content="academic"]
+    .dashboard-chart-main {
 
-        line-height: 23px;
+        flex: 1;
+        min-width: 0;
     }
 
-    .platform-right p {
 
-        font-size: 11px;
+    .platform-overview
+    .platform-item[data-content="academic"]
+    .dashboard-chart-side {
 
-        line-height: 17px;
+        width: 28%;
+        min-width: 0;
     }
 
-    .platform-right h4 {
 
-        font-size: 12px;
+    .platform-overview
+    .platform-item[data-content="academic"]
+    .dashboard-chart-main img,
 
-        line-height: 17px;
+    .platform-overview
+    .platform-item[data-content="academic"]
+    .dashboard-chart-side img {
+
+        display: block;
+
+        width: 100%;
+        height: auto;
+
+        object-fit: contain;
     }
 
-    .platform-right li {
 
-        font-size: 11px;
+    /* Academic floating cards */
 
-        line-height: 16px;
+    .platform-overview
+    .platform-item[data-content="academic"]
+    .diary-stat {
 
-        margin-bottom: 8px;
+        max-width: 48%;
+        box-sizing: border-box;
     }
 
-    .btn-primary {
 
-        padding: 8px 13px;
+    /* ==========================================
+       EXAMINATION DASHBOARD
+    ========================================== */
+
+    .platform-overview
+    .platform-item[data-content="examination"]
+    .examination-dashboard {
+
+        width: 100%;
+
+        overflow: hidden;
+    }
+
+
+    .platform-overview
+    .platform-item[data-content="examination"]
+    .exam-grid {
+
+        width: 100%;
+
+        display: grid;
+
+        grid-template-columns: 1fr 1fr;
+
+        gap: 6px;
+    }
+
+
+    .platform-overview
+    .platform-item[data-content="examination"]
+    .exam-card {
+
+        min-width: 0;
+
+        padding: 7px;
+
+        border-radius: 7px;
+
+        box-sizing: border-box;
+    }
+
+
+    .platform-overview
+    .platform-item[data-content="examination"]
+    .exam-card-title {
+
+        display: flex;
+
+        align-items: center;
+
+        gap: 5px;
+    }
+
+
+    .platform-overview
+    .platform-item[data-content="examination"]
+    .exam-icon {
+
+        width: 22px;
+        height: 22px;
+
+        flex: 0 0 22px;
+    }
+
+
+    .platform-overview
+    .platform-item[data-content="examination"]
+    .exam-icon img {
+
+        width: 100%;
+        height: 100%;
+
+        object-fit: contain;
+    }
+
+
+    .platform-overview
+    .platform-item[data-content="examination"]
+    .exam-card h5 {
+
+        font-size: 7px;
+        line-height: 10px;
+    }
+
+
+    .platform-overview
+    .platform-item[data-content="examination"]
+    .exam-card strong {
 
         font-size: 10px;
+        line-height: 13px;
+    }
+
+
+    .platform-overview
+    .platform-item[data-content="examination"]
+    .exam-card p {
+
+        font-size: 6px;
+        line-height: 9px;
+    }
+
+
+    /* Certification */
+
+    .platform-overview
+    .platform-item[data-content="examination"]
+    .certification-card {
+
+        grid-column: 1 / -1;
+
+        width: 100%;
+
+        min-height: 55px;
+    }
+
+
+    .platform-overview
+    .platform-item[data-content="examination"]
+    .certification-bg {
+
+        width: 100%;
+        height: 100%;
+
+        object-fit: cover;
+    }
+
+
+    .platform-overview
+    .platform-item[data-content="examination"]
+    .certification-content h5 {
+
+        font-size: 8px;
+    }
+
+
+    .platform-overview
+    .platform-item[data-content="examination"]
+    .certification-content strong {
+
+        font-size: 16px;
+    }
+
+
+    .platform-overview
+    .platform-item[data-content="examination"]
+    .exam-dashboard-text {
+
+        font-size: 8px;
+        line-height: 12px;
+
+        margin-top: 7px;
+    }
+
+
+    /* ==========================================
+       RIGHT CONTENT
+    ========================================== */
+
+    .platform-overview .platform-right {
+        width: 100%;
+
+        padding: 14px;
+
+        box-sizing: border-box;
+
+        border-radius: 10px;
+    }
+
+
+    .platform-overview .platform-right h3 {
+        font-size: 20px;
+        line-height: 28px;
+    }
+
+
+    .platform-overview .platform-right p {
+        font-size: 16px;
+        line-height: 24px;
+        letter-spacing: -4%;
+    }
+
+
+    .platform-overview .platform-right h4 {
+        font-size: 16px;
+        line-height: 24px;
+
+
+        font-weight: 500;
+    }
+
+
+    .platform-overview .platform-right ul {
+        padding: 0;
+        margin: 0;
+    }
+
+
+    .platform-overview .platform-right li {
+        display: flex;
+        align-items: center;
+
+        gap: 6px;
+        font-weight: 400;
+
+        font-size: 16px;
+        line-height: 24px;
+
+        margin-bottom: 8px;
+
+        letter-spacing: normal;
+    }
+
+
+    .platform-overview .platform-right li img {
+        width: 12px;
+        height: 12px;
+
+        flex-shrink: 0;
+    }
+
+
+    .platform-overview .btn-primary {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+
+        gap: 7px;
+
+        padding: 8px 22px;
+
+        font-size: 16px;
     }
 
 }
