@@ -107,7 +107,7 @@
 .case-content p {
     font-size: 16px;
     line-height: 24px;
-    letter-spacing: -0.04em;
+    letter-spacing: -4%;
     font-weight: 400;
     color: #222;
     margin: 0 0 26px;
@@ -118,7 +118,7 @@
     font-weight: 500;
     line-height: 100%;
     margin: 0 0 30px;
-    color: #222;
+    color: #000;
 }
 
 .case-content a {
@@ -425,7 +425,7 @@
     animation: caseSlideFromLeft
         0.55s
         cubic-bezier(0.22, 1, 0.36, 1)
-        both;
+        both    ;
 }
 
     .case-navigation {
