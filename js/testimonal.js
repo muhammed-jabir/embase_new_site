@@ -1,27 +1,4 @@
-/*=========================================
-  TESTIMONIAL MARQUEE — GSAP, single source
-  of truth for transform.
-  -----------------------------------------
-  This file REPLACES all previous marquee
-  and video-pause logic. Do not load any
-  other testimonial marquee script alongside
-  this one.
 
-  Touches HTML: no.
-  Touches CSS: only sets `animation: none`
-  inline on the wrapper, to hand the desktop
-  keyframe animation off to GSAP. The mobile
-  media-query rules (which already force
-  `animation:none; transform:none;` under
-  769px) are left untouched and continue to
-  govern mobile, where the section reverts to
-  native `overflow-x:auto` touch scrolling —
-  see "Why no GSAP on mobile" below.
-
-  Requires GSAP core loaded BEFORE this file:
-  <script src=".../gsap.min.js"></script>
-  <script src="testimonial-marquee.js" defer></script>
-=========================================*/
 
 (function () {
   "use strict";
@@ -47,11 +24,7 @@
       return null;
     }
 
-    // ---------------------------------------------------------
-    // 1. Duplicate the slide set ONCE, so the loop is seamless.
-    //    Guarded by a dataset flag so re-init (e.g. after a
-    //    resize crosses the mobile breakpoint) never clones twice.
-    // ---------------------------------------------------------
+   
     let originalCount = wrapper.dataset.originalCount
       ? parseInt(wrapper.dataset.originalCount, 10)
       : null;
@@ -70,14 +43,7 @@
       wrapper.dataset.cloned = "true";
     }
 
-    // ---------------------------------------------------------
-    // 2. Hand transform control to GSAP exclusively.
-    //    `animation: none` is the one CSS override this script
-    //    makes, and only inline/at-runtime — the stylesheet file
-    //    itself is untouched. Nothing else in this script ever
-    //    writes to wrapper.style.transform directly; every
-    //    position change goes through gsap.set().
-    // ---------------------------------------------------------
+  
     wrapper.classList.add("marquee-track");
     wrapper.style.animation = "none";
     wrapper.style.willChange = "transform";
@@ -121,10 +87,6 @@
     };
     gsap.ticker.add(ticker);
 
-    // ---------------------------------------------------------
-    // 5. Hover anywhere in the section pauses; leaving resumes
-    //    from the exact xPos already held in memory.
-    // ---------------------------------------------------------
     function onEnter() {
       isHover = true;
     }
@@ -134,11 +96,6 @@
     section.addEventListener("mouseenter", onEnter);
     section.addEventListener("mouseleave", onLeave);
 
-    // ---------------------------------------------------------
-    // 6. Drag — one Pointer Events code path covers mouse
-    //    (desktop) and touch (mobile-in-desktop-mode / tablets)
-    //    without separate mousedown/touchstart handlers.
-    // ---------------------------------------------------------
     let pointerId = null;
     let dragStartClientX = 0;
     let dragStartXPos = 0;
@@ -179,14 +136,7 @@
     window.addEventListener("pointerup", endDrag);
     window.addEventListener("pointercancel", endDrag);
 
-    // ---------------------------------------------------------
-    // 7. Video + play-button wiring — attached exactly once per
-    //    button/video pair. Clicking a button toggles that video;
-    //    the video's own play/pause/ended events (not the click
-    //    handler) are the single source of truth for pausing the
-    //    marquee and stopping sibling videos, so there is no
-    //    duplicate-listener risk and no divergent state.
-    // ---------------------------------------------------------
+
     const videoWraps = Array.from(container.querySelectorAll(".testimonial-video"));
     const cleanups = [];
 
@@ -256,11 +206,6 @@
       });
     });
 
-    // ---------------------------------------------------------
-    // 8. Re-measure on resize (defensive — desktop card widths
-    //    are fixed by CSS, but this keeps the loop exact if that
-    //    ever changes).
-    // ---------------------------------------------------------
     let resizeRaf = null;
     function onResize() {
       if (resizeRaf) cancelAnimationFrame(resizeRaf);
@@ -290,13 +235,6 @@
     };
   }
 
-  // ===============================================================
-  // MOBILE VIDEO CONTROLLER — completely independent of initMarquee().
-  // No GSAP, no ticker, no drag, no hover-pause, no marquee state of
-  // any kind. Runs only when window.innerWidth <= 768. Native
-  // overflow-x scroll + scroll-snap (already working, per your CSS)
-  // is left entirely alone — this only wires up the play buttons.
-  // ===============================================================
   function initMobileVideos() {
     const videoWraps = Array.from(document.querySelectorAll(".testimonial-video"));
     if (!videoWraps.length) {
@@ -380,19 +318,6 @@
     };
   }
 
-  // -------------------------------------------------------------
-  // Why no GSAP on mobile:
-  // Your stylesheet's <=768px block sets
-  //   animation: none !important; transform: none !important;
-  // on .marquee-track. `!important` on the cascade beats any
-  // inline style GSAP writes, so a transform-driven drag would
-  // silently do nothing there regardless of this script — the
-  // mobile layout is designed to use native `overflow-x:auto`
-  // + scroll-snap instead, which already gives touch users
-  // drag-to-scroll for free. So this script simply doesn't
-  // initialize below the breakpoint, and tears itself down if
-  // the viewport crosses it live (e.g. rotating a tablet).
-  // -------------------------------------------------------------
   function handleModeChange() {
     if (DESKTOP_MQL.matches) {
       if (!teardown) teardown = initMarquee();
@@ -401,11 +326,6 @@
       teardown = null;
     }
   }
-
-  // Mirrors handleModeChange/DESKTOP_MQL above, but for the mobile
-  // video controller — entirely separate state (mobileTeardown),
-  // entirely separate query (MOBILE_MQL), never calls into or reads
-  // from initMarquee()/teardown.
   function handleMobileModeChange() {
     if (MOBILE_MQL.matches) {
       if (!mobileTeardown) mobileTeardown = initMobileVideos();
