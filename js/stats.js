@@ -1,169 +1,73 @@
-﻿const parallaxSection = document.querySelector('.stats');
-const cards = document.querySelectorAll('.stat-card');
-const watermark = document.querySelector('.stats__watermark');
+﻿
+(function () {
+  "use strict";
 
-function clamp(value, min, max) {
-    return Math.min(max, Math.max(min, value));
-}
+  if (typeof gsap === "undefined" || typeof ScrollTrigger === "undefined") {
+    console.warn("[stats-scroll] GSAP core or ScrollTrigger plugin not loaded — check script order.");
+    return;
+  }
 
+  gsap.registerPlugin(ScrollTrigger);
 
-/* ==========================================
-   CHECK MOBILE
-========================================== */
-
-function isMobile() {
-    return window.matchMedia('(max-width: 768px)').matches;
-}
-
-
-/* ==========================================
-   RESET PARALLAX
-========================================== */
-
-function resetParallax() {
-
-    cards.forEach((card) => {
-        card.style.transform = 'none';
+  const MOBILE_MQL = window.matchMedia("(max-width: 768px)");
+  let activeTweens = [];
+  function initStatsScroll() {
+    if (activeTweens.length) return; // already running — avoid duplicate ScrollTriggers
+    const blueTween = gsap.to(".stat-card--blue", {
+      y: -130,
+      ease: "none",
+      scrollTrigger: {
+        trigger: ".stats",
+        start: "top 70%",
+        end: "bottom 30%",
+        scrub: 1,
+      },
     });
 
-    if (watermark) {
-        watermark.style.transform = 'none';
-    }
-}
-
-
-/* ==========================================
-   UPDATE PARALLAX
-========================================== */
-
-function updateParallax() {
-
-    if (!parallaxSection || cards.length === 0) {
-        return;
-    }
-
-
-    /* --------------------------------------
-       MOBILE
-       Completely disable animation
-    -------------------------------------- */
-
-    if (isMobile()) {
-        resetParallax();
-        return;
-    }
-
-
-    /* --------------------------------------
-       DESKTOP
-       Parallax enabled
-    -------------------------------------- */
-
-    if (!watermark) {
-        return;
-    }
-
-    const rect = parallaxSection.getBoundingClientRect();
-
-    const viewportCenter = window.innerHeight / 2;
-
-    const sectionCenter =
-        rect.top + rect.height / 2;
-
-    const distance =
-        viewportCenter - sectionCenter;
-
-    const totalTravel =
-        Math.max(rect.height * 0.72, 1);
-
-    const progress =
-        clamp(
-            distance / totalTravel,
-            -1,
-            1
-        );
-
-
-    /* --------------------------------------
-       RESET WHEN OUTSIDE VIEW
-    -------------------------------------- */
-
-    if (
-        rect.bottom < -120 ||
-        rect.top > window.innerHeight + 120
-    ) {
-        resetParallax();
-        return;
-    }
-
-
-    /* --------------------------------------
-       CARD PARALLAX
-    -------------------------------------- */
-
-    cards.forEach((card) => {
-
-        const speed =
-            Number(card.dataset.speed) || 0;
-
-        const offset =
-            -progress * speed * 0.55;
-
-        card.style.transform =
-            `translateY(${offset}px)`;
+    const peachTween = gsap.to(".stat-card--peach", {
+      y: 130,
+      ease: "none",
+      scrollTrigger: {
+        trigger: ".stats",
+        start: "top 70%",
+        end: "bottom 30%",
+        scrub: 1.4,
+      },
     });
 
-
-    /* --------------------------------------
-       WATERMARK PARALLAX
-    -------------------------------------- */
-
-    watermark.style.transform =
-        `translate(-50%, -50%) translateY(${-progress * 80}px)`;
-}
-
-
-/* ==========================================
-   REQUEST ANIMATION FRAME
-========================================== */
-
-let ticking = false;
-
-function requestParallaxUpdate() {
-
-    if (ticking) {
-        return;
-    }
-
-    ticking = true;
-
-    window.requestAnimationFrame(() => {
-
-        updateParallax();
-
-        ticking = false;
+    activeTweens = [blueTween, peachTween];
+  }
+  function destroyStatsScroll() {
+    activeTweens.forEach((tween) => {
+      if (tween.scrollTrigger) tween.scrollTrigger.kill();
+      tween.kill();
     });
-}
+    activeTweens = [];
 
+    gsap.set(".stat-card", { clearProps: "transform" });
+  }
 
-/* ==========================================
-   EVENTS
-========================================== */
+  function handleModeChange() {
+    if (MOBILE_MQL.matches) {
+      destroyStatsScroll();
+    } else {
+      initStatsScroll();
+    }
+  }
 
-window.addEventListener(
-    'scroll',
-    requestParallaxUpdate,
-    { passive: true }
-);
+  function boot() {
+    handleModeChange();
 
-window.addEventListener(
-    'resize',
-    requestParallaxUpdate
-);
+    if (MOBILE_MQL.addEventListener) {
+      MOBILE_MQL.addEventListener("change", handleModeChange);
+    } else {
+      MOBILE_MQL.addListener(handleModeChange); // Safari < 14
+    }
+  }
 
-
-/* ==========================================
-   INITIAL UPDATE
-========================================== */
-
-requestParallaxUpdate();
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", boot);
+  } else {
+    boot();
+  }
+})();
