@@ -23,15 +23,21 @@ const wrapper = document.querySelector(".testimonial-slider .swiper-wrapper");
 // seamlessly — translateX(-50%) always lands exactly
 // back on the start of an identical copy.
 
-Array.from(wrapper.children).forEach(slide=>{
+if(!wrapper.dataset.cloned){
 
-    const clone = slide.cloneNode(true);
+    Array.from(wrapper.children).forEach(slide=>{
 
-    clone.setAttribute("aria-hidden","true");
+        const clone = slide.cloneNode(true);
 
-    wrapper.appendChild(clone);
+        clone.setAttribute("aria-hidden","true");
 
-});
+        wrapper.appendChild(clone);
+
+    });
+
+    wrapper.dataset.cloned=true;
+
+}
 
 wrapper.classList.add("marquee-track");
 
@@ -166,33 +172,194 @@ videos.forEach(video=>{
 // VIDEO END / VIDEO PAUSE
 // ========================================
 
+let activeVideo = null;
+
+
 videos.forEach(video=>{
+
+    const button = video.parentElement.querySelector(".play-btn");
+
+
+    button.addEventListener("click",()=>{
+
+
+        videos.forEach(v=>{
+
+            if(v !== video){
+
+                resetVideo(v);
+
+            }
+
+        });
+
+
+        activeVideo = video;
+
+        pauseSlider("video");
+
+
+        video.classList.add("playing");
+
+        video.controls=true;
+
+        button.style.display="none";
+
+
+        video.play();
+
+
+    });
+
+
 
     video.addEventListener("ended",()=>{
 
-        video.classList.remove("playing");
 
-        video.controls=false;
+        resetVideo(video);
 
-        video.currentTime=0;
-
-        video.parentElement.querySelector(".play-btn").style.display="flex";
+        activeVideo=null;
 
         resumeSlider("video");
 
+
     });
+
+
 
     video.addEventListener("pause",()=>{
 
-        if(video.ended) return;
 
-        video.classList.remove("playing");
+        // Ignore automatic pause from resetVideo()
+        if(video.dataset.resetting==="true") return;
 
-        video.parentElement.querySelector(".play-btn").style.display="flex";
 
-        resumeSlider("video");
+        if(!video.ended){
+
+            resetVideo(video);
+
+            activeVideo=null;
+
+            resumeSlider("video");
+
+        }
+
 
     });
 
+
 });
 
+
+
+function resetVideo(video){
+
+
+    video.dataset.resetting="true";
+
+
+    video.pause();
+
+
+    video.removeAttribute("controls");
+
+
+    video.currentTime=0;
+
+
+    video.load();
+
+
+    video.classList.remove("playing");
+
+
+    const button =
+    video.parentElement.querySelector(".play-btn");
+
+
+    if(button){
+
+        button.style.display="flex";
+
+    }
+
+
+    setTimeout(()=>{
+
+        video.dataset.resetting="false";
+
+    },100);
+
+
+}
+
+let isDragging = false;
+let startX = 0;
+let currentTranslate = 0;
+let previousTranslate = 0;
+let animationPausedByDrag = false;
+
+testimonialTrack.addEventListener("mousedown",(e)=>{
+
+    isDragging=true;
+
+    pauseSlider("drag");
+
+    startX=e.clientX;
+
+    const style=getComputedStyle(wrapper);
+
+    const matrix=new DOMMatrix(style.transform);
+
+    previousTranslate=matrix.m41;
+
+    wrapper.style.animationPlayState="paused";
+
+    testimonialTrack.style.cursor="grabbing";
+
+});
+
+
+
+window.addEventListener("mousemove",(e)=>{
+
+    if(!isDragging) return;
+
+
+    const diff=e.clientX-startX;
+
+
+    currentTranslate=previousTranslate+diff;
+
+
+    wrapper.style.transform=
+    `translateX(${currentTranslate}px)`;
+
+
+});
+
+
+
+window.addEventListener("mouseup",()=>{
+
+
+    if(!isDragging) return;
+
+
+    isDragging=false;
+
+
+    testimonialTrack.style.cursor="grab";
+
+
+    wrapper.style.transform =
+    `translateX(${currentTranslate}px)`;
+
+
+    wrapper.style.animationPlayState="running";
+
+
+    resumeSlider("drag");
+
+
+});
