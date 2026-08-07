@@ -83,7 +83,6 @@ HEADER
     line-height:100%;
     align-items: center;
     letter-spacing: -4%;
-    font-style: medium;
 
     font-weight:600;
 
@@ -167,6 +166,15 @@ SWIPER
     overflow:visible;
     padding-right: 140px;
 
+}
+
+.testimonials .testimonial-slider{
+    touch-action: pan-x;
+    overscroll-behavior-x: contain;
+}
+
+.testimonials .client-video{
+    touch-action: manipulation;
 }
 
 .swiper-wrapper{
