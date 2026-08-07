@@ -1045,43 +1045,8 @@
    BUTTON
 =========================== */
 
-.btn-primary{
 
-    display:inline-flex;
-   width: fit-content;
 
-    align-items:center;
-
-    gap:7px;
-
-   background: var(--color-Blue-Ribbon-600, #155DFC);
-
-    color:#fff;
-
-    padding:16px;
-
-    border-radius:42px;
-
-    text-decoration:none;
-    font-family: 'lato';
-
-    font-weight:400;
-
-    transition:.3s;
-    transform: translateY(-12px);
-}
-
-.btn-primary:hover{
-
-    background:#1e48d3;
-}
-
-.btn-primary img{
-
-    width:10px;
-
-    filter:brightness(0) invert(1);
-}
 .platform-right .btn-primary {
     opacity: 0;
     transform: translateY(20px);
@@ -1543,8 +1508,7 @@
     .platform-right h3,
     .platform-right p,
     .platform-right h4,
-    .platform-right li,
-    .platform-right .btn-primary {
+    .platform-right li{
         opacity: 1;
         transform: none;
 
@@ -1619,24 +1583,6 @@
     /* =====================================================
        BUTTON
     ===================================================== */
-
-    .platform-right .btn-primary {
-        display: inline-flex;
-
-        width: fit-content;
-
-        padding: 12px 16px;
-
-        gap: 6px;
-
-        font-size: 14px;
-
-        transform: none !important;
-    }
-
-    .platform-right .btn-primary img {
-        width: 9px;
-    }
 
 
     /* =====================================================

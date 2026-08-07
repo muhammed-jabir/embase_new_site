@@ -19,24 +19,109 @@
     font-weight:500;
 
 }
+/* =================================
+   BASE BUTTON
+================================= */
+/* =================================
+BASE BUTTON
+================================= */
 
-.btn{
-
-    display:inline-flex;
-
+.connect-buttons{
+    display:flex;
     align-items:center;
+    gap:16px;
+    margin-top:12px;
+}
+.connect::before{
 
-    gap:8px;
+    content:"";
 
-    padding:12px 24px;
+    position:absolute;
 
-    border-radius:999px;
+    inset:0;
 
-    background:#155DFC;
+    background:url("../assets/images/dot_bg.png") center center;
 
-    color:#fff;
+    background-size:cover;
+
+    background-repeat:no-repeat;
 
 }
+
+.btn-primary{
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 50px;
+    gap: 7px;
+
+    background: #155DFC;
+    color: #fff;
+    border: 1px solid transparent;
+
+    font-family: 'Lato', sans-serif;
+    font-size: 16px;
+    line-height: 100%;
+    font-weight: 400;
+
+    padding: 8px 22px;
+    border-radius: 42px;
+
+    text-decoration: none;
+
+}
+
+.btn-primary image{
+    width: 10px;
+
+}
+
+
+/* =================================
+PRIMARY BUTTON
+================================= */
+
+
+
+.btn-primary:hover {
+    background: #1745e0;
+}
+
+
+/* =================================
+OUTLINE / WHITE BUTTON
+================================= */
+
+.btn-outline {
+     display: inline-flex;
+     min-height: 50px;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+
+    background: #fff;
+    color: #111827;
+    border: 1px solid #155DFC;
+
+    
+    font-family: 'Lato', sans-serif;
+    font-size: 16px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    font-weight: 400;
+
+    padding: 8px 22px;
+    border-radius: 42px;
+
+    text-decoration: none;
+}
+
+
+.btn-outline:hover {
+    background: #EEF4FF;
+}
+
+
 
 .card{
 
@@ -64,5 +149,9 @@
         font-size: 14;
         line-height: 100%;
     }
-    
+    .btn-primary{
+        font-size: 16px;
+        line-height: 100%;
+    }
+
 }

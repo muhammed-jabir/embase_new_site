@@ -48,43 +48,6 @@
     color:#222;
 }
 
-.trusted-btn{
-
-    display:inline-flex;
-
-    align-items:center;
-
-    justify-content:center;
-
-    gap:10px;
-
-    padding:14px 28px;
-
-    border-radius:999px;
-
-    background:#155DFC;
-
-    color:#fff;
-
-    font-size:16px;
-
-    font-weight:400;
-
-    white-space:nowrap;
-
-    width:auto;
-
-    transition:.3s;
-}
-
-.trusted-btn:hover{
-    transform:translateY(-2px);
-}
-
-.trusted-btn img{
-    width:10px;
-    height:10px;
-}
 
 /* RIGHT */
 
@@ -376,14 +339,6 @@
     }
 
 
-    .trusted-btn{
-
-        padding:13px 24px;
-
-        font-size:15px;
-
-    }
-
 
     .trusted-logos{
 
@@ -504,13 +459,6 @@
         max-width:38px;
 
         max-height:38px;
-
-    }
-
-
-    .trusted-btn{
-
-        width:fit-content;
 
     }
 

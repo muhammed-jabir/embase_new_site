@@ -87,51 +87,6 @@
 }
 
 
-.demo-btn{
-
-    display:inline-flex;
-
-    align-items:center;
-
-    justify-content:center;
-
-    gap:7px;
-
-    padding:14px 28px;
-
-    border-radius:42px;
-
-    background:#155DFC;
-
-    color:#fff;
-    font-family:'lato',sans-serif;
-
-    font-size:16px;
-
-    font-weight:400;
-    font-family:'lato',sans-serif;
-
-    white-space:nowrap;
-
-    width:auto;
-
-    transition:.3s;
-}
-.demo-btn img{
-    width: 10px;
-    height: 10px;
-    object-fit: contain;
-    top: 4px;
-    left: 4px;
-    color: rgba(255, 255, 255, 1);
-
-}
-
-.demo-btn:hover{
-
-    background:#0e4cd8;
-
-}
 
 @media (max-width: 1400px){
 
@@ -252,15 +207,6 @@
 
     }
 
-
-    .demo-btn{
-
-        padding:13px 24px;
-
-        font-size:15px;
-
-    }
-
 }
 @media (max-width:480px){
 
@@ -306,24 +252,6 @@
         font-weight:400;
         letter-spacing:-4%;
         font-style:normal;
-
-    }
-
-
-    .demo-btn{
-
-        width:fit-content;
-
-        padding:14px 20px;
-
-    }
-
-
-    .demo-btn img{
-
-        width:9px;
-
-        height:9px;
 
     }
 

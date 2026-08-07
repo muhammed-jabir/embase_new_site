@@ -20,6 +20,7 @@
 
     position:relative;
 }
+
 .connect h2{
 
     margin:0;
@@ -48,75 +49,7 @@
     color: var(--color-neutral-900, rgba(34, 34, 34, 1));
 
 }
-.connect-buttons{
 
-    display:flex;
-    gap:16px;
-
-    margin-top:12px;
-}
-.connect::before{
-
-    content:"";
-
-    position:absolute;
-
-    inset:0;
-
-    background:url("../assets/images/dot_bg.png") center center;
-
-    background-size:cover;
-
-    background-repeat:no-repeat;
-
-}
-.btn-outline{
-
-    display:inline-flex;
-    align-items:center;
-    justify-content:center;
-
-    padding:14px 28px;
-    background:#fff;
-
-    border:1px solid #2F5CF0;
-    border-radius:999px;
-
-    color:#0c0c0c;
-
-    text-decoration:none;
-    font-weight:500;
-
-    transition:.3s;
-}
-
-.btn-outline:hover{
-
-    background:#EEF4FF;
-}
-.btn{
-
-    display:inline-flex;
-    align-items:center;
-    justify-content:center;
-
-    padding:14px 28px;
-
-    border-radius:999px;
-
-    background:#2F5CF0;
-    color:#fff;
-
-    text-decoration:none;
-    font-weight:400;
-
-    transition:.3s;
-}
-
-.btn:hover{
-
-    background:#1745e0;
-}
 
 /*==================================
 CONNECT SECTION RESPONSIVE
@@ -213,14 +146,6 @@ CONNECT SECTION RESPONSIVE
 
     }
 
-    .btn,
-    .btn-outline{
-
-        padding:13px 24px;
-
-        font-size:15px;
-
-    }
 
 }
 
@@ -278,18 +203,7 @@ CONNECT SECTION RESPONSIVE
         width:auto;
 
     }
-    .btn,
-    .btn-outline{
-
-        width:auto;
-
-        min-width:140px;
-
-        padding:12px 20px;
-
-        font-size:15px;
-
-    }
+   
 
 }
 
