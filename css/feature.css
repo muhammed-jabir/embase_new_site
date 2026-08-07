@@ -21,17 +21,6 @@ margin:auto;
   gap: 16px;
   margin-bottom: 40px;
 }
- 
-.features__badge {
-    padding:8px 18px;
-    background:#EEF5FF;
-    color:#155DFC;
-    border-radius:999px;
-    font-size:16px;
-    font-weight:500;
-    line-height: 100%;
-}
- 
 .features__title {
   margin: 0;
   max-width: 835px;

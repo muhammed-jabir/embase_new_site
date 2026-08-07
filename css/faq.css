@@ -21,26 +21,6 @@
 
 }
 
-.faq-badge{
-
-    display:inline-block;
-
-    padding:6px 16px;
-
-    margin-bottom:22px;
-
-    border-radius:999px;
-
-    border: 1px solid var(--color-Blue-Ribbon-400, rgba(83, 160, 255, 1));
-
-    color:rgba(0,0,0,1);
-
-    font-size:13px;
-
-    font-weight:600;
-
-}
-
 .faq-title{
 
     margin:0;
@@ -327,13 +307,6 @@
 
     }
 
-    .faq-badge{
-
-        font-size:12px;
-
-        padding:6px 14px;
-
-    }
 
     .faq-title{
 

@@ -19,17 +19,6 @@
 
 }
 
-.benefits__badge{
-
-    padding:8px 18px;
-    background:#EEF5FF;
-    color:#155DFC;
-    border-radius:999px;
-    font-size:16px;
-    font-weight:500;
-    line-height: 100%;
-}
-
 .benefits__title{
 
     margin:0;
@@ -44,9 +33,10 @@
     max-width:716px;
     font-size:18px;
     line-height:26px;
-    color: #222;
+   color: var(--color-neutral-900, #222222);
+
     font-weight: 400;
-    font-style: normal;
+
 }
 
 .benefits__grid{
@@ -289,15 +279,6 @@
         gap:14px;
 
         margin-bottom:35px;
-
-    }
-
-
-    .benefits__badge{
-
-        font-size:14px;
-
-        padding:7px 16px;
 
     }
 

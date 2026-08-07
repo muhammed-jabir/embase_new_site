@@ -21,27 +21,6 @@
     width:55%;
 }
 
-.trusted-badge{
-    display:inline-block;
-    padding:8px 16px;
-    margin-bottom:22px;
-    gap: 8px;
-
-    font-size:16px;
-    font-weight:500;
-    line-height: 100%;
-
-    color: rgba(21, 93, 252, 1);
-
-
-    background: var(--color-neutral-50, rgba(255, 255, 255, 1));
-
-
-   border: 1px solid var(--color-Blue-Ribbon-100, rgba(216, 233, 255, 1));
-
-   border-radius: 50px;
-}
-
 .trusted-title{
     margin:0 0 24px;
     max-width: 689px;
@@ -379,16 +358,6 @@
 
     }
 
-
-    .trusted-badge{
-
-        font-size:14px;
-
-        padding:7px 14px;
-
-    }
-
-
     .trusted-title{
 
         font-size:34px;
@@ -471,12 +440,6 @@
         background: var(--color-neutral-200, #F8F8F8);
 
 
-    }
-
-    .trusted-badge{  
-
-  border: 1px solid var(--color-Blue-Ribbon-100, #D8E9FF);
-background: var(--color-Blue-Ribbon-50, #EEF5FF);
     }
 
 

@@ -20,23 +20,6 @@
 
     position:relative;
 }
-.connect .badge{
-
-    padding:8px 16px;
-
-    background: var(--color-Blue-Ribbon-50, #EEF5FF);
-    border: 1px solid var(--color-Blue-Ribbon-100, #D8E9FF);
-
-
-    border-radius:50px;
-    line-height: 100%;
-
-    font-size:14px;
-    font-weight:500;
-    color: var(--color-Blue-Ribbon-600, #155DFC);
-
-
-}
 .connect h2{
 
     margin:0;
@@ -201,14 +184,6 @@ CONNECT SECTION RESPONSIVE
     .connect{
 
         padding:60px 25px;
-
-    }
-
-    .connect .badge{
-
-        font-size:14px;
-
-        padding:6px 14px;
 
     }
 

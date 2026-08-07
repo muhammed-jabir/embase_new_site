@@ -43,34 +43,6 @@ HEADER
 
 }
 
-.testimonial-badge{
-    max-width: 232px;
-
-    display:inline-flex;
-
-    padding:8px 16px;
-    gap:8px;
-
-    border-radius:50px;
-
-    background: var(--color-Blue-Ribbon-50, #EEF5FF);
-
-
-    border: 1px solid var(--color-Blue-Ribbon-400, #53A0FF);
-
-    color:black;
-
-    font-size:16px;
-
-    line-height: 100%;
-    letter-spacing: -4%;
-    align-items: center;
-
-    font-weight:500;
-
-    margin-bottom:22px;
-
-}
 
 .section-title{
 
@@ -438,30 +410,6 @@ CONTENT
 
 
     /* BADGE */
-
-    .testimonials .testimonial-badge {
-        display: inline-flex;
-
-        align-items: center;
-        justify-content: center;
-
-        width: fit-content;
-        max-width: 100%;
-
-        padding: 8px 16px;
-
-        margin: 0 0 20px;
-
-        font-size: 14px;
-        line-height: 100%;
-        font-weight: 500;
-
-        white-space: nowrap;
-
-        border-radius: 50px;
-
-        box-sizing: border-box;
-    }
 
 
     /* TITLE */
