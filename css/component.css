@@ -152,6 +152,15 @@ OUTLINE / WHITE BUTTON
     .btn-primary{
         font-size: 16px;
         line-height: 100%;
+        min-height: 48px;
     }
+    .btn-outline{
+        font-size: 16px;
+        line-height: 100%;
+        min-height: 48px;
+
+    }
+
+
 
 }

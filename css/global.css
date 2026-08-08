@@ -20,6 +20,10 @@
     /* Radius */
     --radius-card: 16px;
     --radius-badge: 999px;
+
+     --font-size-h2: 48px;
+     --line-height-h2:58px
+     
 }
 
 *{
@@ -58,4 +62,11 @@ ul{
 
     list-style:none;
 
+}
+
+html,
+body {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
 }

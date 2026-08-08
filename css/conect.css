@@ -112,56 +112,45 @@ CONNECT SECTION RESPONSIVE
 
 
 /* Tablet */
-@media (max-width:768px){
+@media (max-width: 768px) {
 
-    .connect{
-
-        padding:60px 25px;
-
+    .connect {
+        padding: 20px;
+        box-sizing: border-box;
     }
 
-    .connect h2{
-
-        font-size:34px;
-
-        line-height:44px;
-
+    .connect h2 {
+        font-size: 34px;
+        line-height: 44px;
+        text-align: center;
     }
 
-    .connect p{
-
-        font-size:16px;
-
-        line-height:25px;
-
+    .connect p {
+        font-size: 16px;
+        line-height: 25px;
+        text-align: center;
     }
 
-    .connect-buttons{
-
-        gap:14px;
-
-        flex-wrap:wrap;
-
-        justify-content:center;
-
+    .connect-buttons {
+        gap: 14px;
+        flex-wrap: wrap;
+        justify-content: center;
     }
-
 
 }
-
 
 /* Mobile */
 @media (max-width:480px){
 
     .connect{
 
-        padding:50px 20px;
+        padding:16px;
 
     }
 
     .connect-container{
 
-        gap:18px;
+        gap:10px;
 
     }
     
@@ -183,8 +172,7 @@ CONNECT SECTION RESPONSIVE
         line-height:24px;
         letter-spacing:-4%;
         font-weight:400;
-        font-style:normal;
-        font-family:'regular', sans-serif;
+        margin: 0 auto;
 
     }
 
@@ -209,28 +197,53 @@ CONNECT SECTION RESPONSIVE
 
 
 /* Small Phones */
-@media (max-width:360px){
+@media (max-width: 380px) {
 
-    .connect{
-
-        padding:40px 16px;
-
+    .connect {
+        width: 100%;
+        padding: 50px 16px;
+        box-sizing: border-box;
+        overflow: hidden;
     }
 
-    .connect h2{
-
-        font-size:25px;
-
-        line-height:34px;
-
+    /* Let's Connect */
+    .connect h3 {
+        font-size: 16px;
+        line-height: 22px;
+        padding: 10px 22px;
+        margin-bottom: 25px;
     }
 
-    .connect p{
-
-        font-size:14px;
-
-        line-height:22px;
-
+    /* Main heading */
+    .connect h2 {
+        font-size: 25px;
+        line-height: 34px;
+        text-align: center;
+        margin-bottom: 24px;
     }
 
+    /* Description */
+    .connect p {
+        font-size: 14px;
+        line-height: 22px;
+        text-align: center;
+        margin-bottom: 28px;
+    }
+
+    /* Buttons */
+    .connect .buttons {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 12px;
+        width: 100%;
+    }
+
+    .connect .buttons a,
+    .connect .buttons button {
+        width: 100%;
+        max-width: 280px;
+        box-sizing: border-box;
+        text-align: center;
+    }
 }
